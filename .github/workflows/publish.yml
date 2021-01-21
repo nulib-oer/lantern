@@ -1,0 +1,37 @@
+name: Publish Textbook
+
+on:
+  push:
+    paths:
+      - 'chapters/**'
+      - 'images/**'
+      - 'metadata.yml'
+      - 'Makefile'
+    branches:
+      - main  # Set a branch name to trigger deployment
+
+jobs:
+  deploy:
+    runs-on: macos-latest
+    steps:
+      
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Pandoc and LaTeX
+        run: |
+          brew install pandoc
+          brew install --cask basictex
+
+      - name: Build Textbook
+        run: |
+          cd docs
+          make html
+          touch ./build/.nojekyll
+          mv ./build/book.html ./build/index.html
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/html
