@@ -1,0 +1,25 @@
+name: Convert Word to Markdown
+
+#on:
+#  push:
+#    paths:
+#      - 'word/**'
+#    branches:
+#      - main  # Set a branch name to trigger deployment
+
+jobs:
+  deploy:
+    runs-on: macos-latest
+    steps:
+      
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Pandoc and LaTeX
+        run: |
+          brew install pandoc
+
+      - name: Make Markdown
+        run: |
+          for f in word/*.docx; do pandoc "$f" -s -t markdown --atx-header --wrap=none --extract-media=../images -o "${f%.docx}.md"; done
+          mv word/*.md chapters/
