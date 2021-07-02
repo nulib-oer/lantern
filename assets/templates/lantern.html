@@ -162,8 +162,7 @@ $body$
     
     <footer class="uk-container" role="contentinfo">
         &copy; 
-        <script>document.write(new Date().ge
-        tFullYear())</script>
+        <script>document.write(new Date().getFullYear())</script>
         $copyright.holder$
     </footer>
     
@@ -178,6 +177,7 @@ $body$
             for (var i = 0; i < links.length; i++) {
             if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
                 links[i].target = '_blank';
+                links[i].rel = 'noopener';
             }}
         })();
     </script>
