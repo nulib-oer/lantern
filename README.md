@@ -5,7 +5,8 @@
 This repository contains Lantern, an [OER](https://en.wikipedia.org/wiki/Open_educational_resources) publishing template for [Pandoc](http://pandoc.org/) that produces textbooks in multiple formats. 
 
 - Documentation: https://nulib-oer.github.io/lantern/
-- Starter kit: https://github.com/nulib-oer/lantern-starter 
+- Starter files: https://github.com/nulib-oer/lantern-starter 
+- Example: https://nulib-oer.github.io/lantern-starter/
 
 ## Purpose
 
