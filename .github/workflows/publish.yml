@@ -19,18 +19,9 @@ jobs:
       - name: Setup Pandoc
         run: brew install pandoc pandoc-crossref
 
-      - name: Install LaTeX via TinyTex
-        uses: r-lib/actions/setup-tinytex@v1
-
-      - name: Checks Installations
-        run: |
-          tlmgr --version
-          pandoc --version
-          pandoc-crossref --version
-
       - name: Build Website
         run: |
-          sh lantern.sh
+          sh lantern.sh html
           touch ./public/.nojekyll
 
       - name: Deploy
