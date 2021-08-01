@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="$lang$" $if(dir)$dir="$dir$"$endif$>
+<head>
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc via Lantern" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<title>$title$ | $publisher.name$</title>
+$for(author)$
+<meta name="author" content="$author.name$" />
+$endfor$
+$if(publication-year)$
+<meta name="dcterms.date" content="$publication-year$" />
+$endif$
+<meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+
+<!-- Bibliographic Metadata -->
+<meta name="citation_title" content="$title$">
+<meta name="citation_year" content="$publication-year$">
+<meta name="citation_language" content="$lang$">
+$for(keyword)$
+<meta name="citation_keywords" content="$keyword$">
+$endfor$
+<meta name="citation_publisher" content="$publisher.name$">
+<meta name="citation_isbn" content="$isbn_e$">
+$for(author)$
+<meta name="citation_author" content="$author.name$">
+$endfor$
+$if(book_editor)$
+<meta name="citation_author" content="$editor.book$ (Book Editor)">
+$endif$
+$if(series_editor)$
+<meta name="citation_author" content="$editor.series$ (Series Editor)">
+$endif$
+$if(doi)$
+<meta name="dc.identifier" content="$doi$">
+$endif$
+
+<!-- Open Graph Metadata -->
+<meta property="og:title" content="$title$" />
+<meta property="og:description" content="$description$" />
+<meta property="og:image" content="cover.png" />
+<meta property="og:url" content="$url$">
+<meta property="og:site_name" content="$title$">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card Metadata -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="$title$" />
+<meta name="twitter:description" content="$description$" />
+<meta name="twitter:image" content="cover.png" />
+<meta property="twitter:domain" content="$url$">
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@id": "https://doi.org/$doi$",
+      "@type": "Book",
+      "name": "$title$",
+      "author": "$for(author)$$author.name$$sep$, $endfor$",
+      "url": "url",
+      "datePublished": "$publication-year$"
+    }
+</script>
+
+<!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="lib/pico.min.css">
+<link rel="stylesheet" href="styles/home.css">
+<link rel="stylesheet" href="styles/custom.css">
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+</head>
+    <body>
+    <a class="skip-link" href="#info">
+        Skip to book information.
+    </a>
+    $for(include-before)$
+        $include-before$
+    $endfor$
+
+    <div class="title-card" style="background-color:$title-card-bg-color$">
+
+        <div class="title-card-body">
+
+            <hgroup>
+                <h1>$title$</h1>
+                $if(subtitle)$
+                <h2>$subtitle$</h2>
+                $endif$
+            </hgroup>
+            <small><em>$for(author)$$author.name$$sep$, $endfor$</em></small>
+        </div>
+
+    </div>
+   
+    <main class="container">
+
+        <article>
+                $description$
+                <details>
+                    <summary><strong>More Information</strong></summary>
+                    <dl>
+                        $if(subjects)$
+                        <dt>Subjects</dt>
+                        <dd>$for(subjects)$$subjects$$sep$, $endfor$</dd>
+                        $endif$
+                        <dt>Copyright</dt>
+                        <dd><a href="$copyright.statement-uri$">$publication-year$ &copy; $if(copyright.holder)$$copyright.holder$$else$$for(author)$$author.name$$sep$, $endfor$$endif$</a></dd>
+                        <dt>License</dt>
+                        <dd><a href="$copyright.license-uri$">$copyright.license$</a></dd>
+                        <dt>Publisher</dt>
+                        <dd><a href="$publisher.website$">$publisher.name$</a></dd>
+                        $if(contributor)$
+                        <dt>Contributors</dt>
+                        <dd>$for(contributor)$$contributor$$sep$, $endfor$</dd>
+                        $endif$
+                        <dt>Preferred Attribution</dt>
+                        <dd>$if(copyright.attribution)$$copyright.attribution$$else$$for(author)$$author.name$$sep$, $endfor$, <em><a ref="$url$">$title$ $if(subtitle)$: $subtitle$$endif$.</a></em> $publisher.location$: <a href="$publisher-website$">$publisher.name$</a>, $publication-year$.$endif$</dd>
+                    </dl>
+                </details>
+            <footer>
+
+                <hgroup>
+                    <h2>Get started</h2>
+                </hgroup>
+
+                $for(format)$
+                <a href="$format.link$" role="button" class="contrast outline">$format.label$</a>
+                $endfor$
+
+                <br>
+                
+                <div class="credit-line">
+                    <small>Built with <a href="https://lantern.northwestern.pub">Lantern.</a></small>
+                </div>
+            
+            </footer>
+        </article>
+
+        
+
+    </main>
+
+    $for(include-after)$
+        $include-after$
+    $endfor$
+
+    <script>
+        (function() {
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+            if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+                links[i].target = '_blank';
+            }}
+        })();
+    </script>
+  
+    </body>
+</html>

@@ -1,0 +1,16 @@
+# pandoc settings for html output format
+# for all available options, see 
+# https://pandoc.org/MANUAL.html#default-files
+
+metadata-file: 
+  - source/data/metadata.yml
+  - source/data/config.yml
+
+to: html5
+
+template: assets/templates/home.html
+standalone: true
+
+# table of contents
+table-of-contents: true
+toc-depth: 3

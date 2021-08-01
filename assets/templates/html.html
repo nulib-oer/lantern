@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc via Lantern" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/pico.min.css">
+    <link rel="stylesheet" href="styles/html.css">
+    <link rel="stylesheet" href="styles/custom.css">
+    <title>$title$ | $publisher.name$</title>
+
+    $if(math)$
+    $math$
+    $endif$
+
+    <!-- Loads AnchorJS library: https://www.bryanbraun.com/anchorjs/ -->
+    <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+    <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+    $for(header-includes)$
+    $header-includes$
+    $endfor$
+  </head>
+  <body>
+    <h1 class="sr-only">$title$</h1>
+    $for(include-before)$
+        $include-before$
+    $endfor$
+    <main class="container">
+        <div class="grid">
+            <div class="toc">
+                <aside>
+                    <nav>
+                        <a href="index.html" class="back">
+                            Back to Home
+                        </a>
+                        $table-of-contents$
+                    </nav>
+                </aside>
+            </div>
+            <div class="content">
+$body$
+
+                    $if(definitions)$
+                    ${ definitions.html() }
+                    $endif$
+            </div>
+        </div>   
+    </main>
+    $for(include-after)$
+        $include-after$
+    $endfor$
+
+    <script>
+        /* AnchorJS docs: https://www.bryanbraun.com/anchorjs/ */
+        anchors.add();
+    </script>
+
+    <script>
+        (function() {
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+            if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+                links[i].target = '_blank';
+            }}
+        })();
+    </script>
+
+  </body>
+</html>

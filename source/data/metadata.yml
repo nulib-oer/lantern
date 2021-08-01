@@ -1,0 +1,58 @@
+# bibliographic metadata
+
+title: Lantern
+subtitle: a template and workflow toolkit for open textbooks
+
+author:
+  - name: Chris Diaz
+    affiliation: Northwestern University
+    orchid:
+  - name: Lauren McKeen McDonald
+    affiliation: Northwestern University
+    orchid:
+
+contributor:
+  - Maria Palacio
+  - Angelina Jaglinski
+  - Sherry Wang
+
+publication-year: 2021
+website: something
+
+keywords:
+  - digital publishing
+  - pandoc
+  - open educational resources
+
+subjects: 
+  - Academic Libraries
+  - Technology
+
+description: |
+  Lantern introduces and demonstrates a minimal computing approach to producing textbooks using free and open source software. Lantern provides an Pandoc template for building multiple formats of book-length educational works.
+  
+  - **Free:** Lantern uses open source software and free-of-charge web services for processing, building, deploying, and hosting open textbooks. 
+
+  - **Portable:** Lantern emphasizes the use of plain text file formats that can run on any machine or web host. No databases or servers are required. 
+
+  - **Multi-format:** Lantern teaches semantic markup technologies for producing Markdown, HTML, PDF, DOCX, and LaTeX editions of open textbooks. 
+
+  - **Sustainable:** Lantern minimizes the infrastructure, configuration, hosting, and maintenance costs related to traditional digital publishing systems and platforms.
+
+  - **Discoverable:** Lantern produces harvestable metadata in OAI-PMH, JSON-LD and Google Scholar tags.
+
+copyright:
+  holder: Chris Diaz & Lauren McKeen McDonald
+  # see https://rightsstatements.org/ for recommended statement and uri options
+  statement: In Copyright 
+  statement-uri: http://rightsstatements.org/vocab/InC/1.0/
+  # see https://creativecommons.org/licenses/ for recommended license and uri options
+  license: Attribution 4.0 International (CC BY 4.0) 
+  licence-uri: https://creativecommons.org/licenses/by/4.0/
+
+publisher:
+  name: Northwestern University Libraries
+  location: Evanston, IL # city, state
+  website: https://library.northwestern.edu
+
+lang: en-us 

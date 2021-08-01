@@ -1,0 +1,30 @@
+# website settings
+
+title-card-bg-color: "#3D2F5B"
+
+cover: true
+toc-title: "Contents" 
+reference-section-title: "References" 
+
+format: # full-text outputs
+  - label: Documentation
+    link: textbook.html
+  - label: GitHub Template Repository
+    link: https://github.com/nulib-oer/lantern
+
+# pandoc-crossref option
+linkReferences: true
+
+# print settings
+
+paper:
+  # available units: in, cm, or mm
+  # default creates A4 page size, > 150 pages long
+  width: 8.27in
+  height: 11.69in
+  gutter: 1in
+  margin:
+    top: 1in
+    bottom: 1in
+    left: 1in
+    right: 1in

@@ -1,0 +1,29 @@
+name: Convert Word Processing Formats to Markdown
+
+on:
+  push:
+    branches:
+      - main  # Set a branch name to trigger deployment
+    paths:
+      - 'source/preprocess/**'
+
+jobs:
+  convert_to_markdown:
+    runs-on: ubuntu-20.04
+    steps:
+      
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        
+      - name: Install Pandoc
+        run: brew install pandoc
+
+      - name: Run Convert Script
+        run: make markdown
+
+      - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
+        with:
+          add: 'source/chapters/*.md'
+          default_author: github_actor
+          message: 'New Markdown Chapters'
+          pull_strategy: '--no-rebase'

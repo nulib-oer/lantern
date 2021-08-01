@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops"$if(lang)$ xml:lang="$lang$"$endif$>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <title>$pagetitle$</title>
+$if(highlighting-css)$
+  <style>
+$highlighting-css$
+$epub.css()$
+  </style>
+$endif$
+$for(css)$
+  <link rel="stylesheet" type="text/css" href="$css$" />
+$endfor$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+</head>
+<body$if(coverpage)$ id="cover"$endif$$if(body-type)$ epub:type="$body-type$"$endif$>
+
+$if(titlepage)$
+<section epub:type="titlepage" class="titlepage">
+
+$for(title)$
+$if(title.type)$
+  <h1 class="$title.type$">$title.text$</h1>
+$else$
+  <h1 class="title">$title$</h1>
+$endif$
+$endfor$
+
+$if(subtitle)$
+  <p class="subtitle">$subtitle$</p>
+$endif$
+
+$for(author)$
+  <p class="author">$author.name$</p>
+$endfor$
+
+$for(creator)$
+  <p class="$creator.role$">$creator.text$</p>
+$endfor$
+
+$if(publisher)$
+  <p class="publisher"><a href="$publisher.website$">$publisher.name$</a></p>
+$endif$
+
+<p>
+  $if(copyright.statement)$
+  <span style="font-weight:bold">Copyright status:</span>s <a href="$copyright.statement-uri$">$copyright.statement$</a>
+  $endif$
+  $publication-year$ $copyright.holder$</p>
+<p><span style="font-weight:bold">License:</span> <a href="$copyright.license-uri$">$copyright.license$</a></p>
+
+$if(copyright.attribution)$
+<p><span style="font-weight:bold">Preferred citation:</span> $copyright.attribution$</p>
+$endif$
+
+$if(copyright.exceptions)$
+<ul>
+  $for(copyright.exceptions)$
+  <li>$copyright.exceptions$</li>
+  $endfor$
+</ul>
+$endif$
+
+<div role="doc-abstract">
+  <h2>About this Book</h3>
+  <p>$description$</p>
+</div>
+
+</section>
+
+$else$
+$if(coverpage)$
+<div id="cover-image">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 $cover-image-width$ $cover-image-height$" preserveAspectRatio="none">
+<image width="$cover-image-width$" height="$cover-image-height$" xlink:href="../media/$cover-image$" />
+</svg>
+</div>
+$else$
+$for(include-before)$
+$include-before$
+$endfor$
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+$endif$
+$endif$
+</body>
+</html>
+

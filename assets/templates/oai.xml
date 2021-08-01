@@ -1,0 +1,17 @@
+<oai_dc:dc xmlns:oai_dc="https://www.openarchives.org/OAI/2.0/oai_dc/"
+    xmlns:dc="https://purl.org/dc/elements/1.1/"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.openarchives.org/OAI/2.0/oai_dc/
+ https://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+    <dc:title xml:lang="$lang$">$title$</dc:title>
+$for(author)$
+    <dc:creator>$author.name$</dc:creator>
+$endfor$
+    <dc:publisher>$publisher.name$</dc:publisher>
+    <dc:date>Created: $publication-year$</dc:date>
+    <dc:type>text</dc:type>
+    <dc:identifier>$doi$</dc:identifier>
+    <dc:identifier>$isbn-p$</dc:identifier>
+    <dc:identifier>$isbn-e$</dc:identifier>
+    <dc:language>english</dc:language>
+    <dc:rights xml:lang="en">$copyright.statement$</dc:rights>
+</oai_dc:dc>
