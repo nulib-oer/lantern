@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc via Lantern" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/pico.min.css">
+    <link rel="stylesheet" href="styles/html.css">
+    <link rel="stylesheet" href="styles/custom.css">
+    <title>Lantern | Northwestern University Libraries</title>
+
+    
+    <!-- Loads AnchorJS library: https://www.bryanbraun.com/anchorjs/ -->
+    <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+    <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+      </head>
+  <body>
+    <h1 class="sr-only">Lantern</h1>
+        <main class="container">
+        <div class="grid">
+            <div class="toc">
+                <aside>
+                    <nav>
+                        <a href="index.html" class="back">
+                            Back to Home
+                        </a>
+                        <ul><li><a href="#introduction">Introduction</a><ul><li><a href="#features">Features</a></li><li><a href="#who-is-lantern-for">Who is Lantern for?</a></li><li><a href="#credits">Credits</a></li></ul></li><li><a href="#quick-start">Quick Start</a><ul><li><a href="#required-software">Required Software</a></li><li><a href="#get-the-template">Get the Template</a></li><li><a href="#adding-your-content">Adding your Content</a></li><li><a href="#build-commands">Build Commands</a></li><li><a href="#deploy-your-website">Deploy your website</a></li></ul></li></ul>
+                    </nav>
+                </aside>
+            </div>
+            <div class="content">
+<h2 id="introduction">Introduction</h2><p>Lantern is a <a href="https://pandoc.org">Pandoc</a> template and workflow toolkit for making open textbooks. Lantern applies minimal computing techniques to <a href="https://en.wikipedia.org/wiki/Open_educational_resources">OER</a> publishing.</p><div class="box"><p>“<a href="https://go-dh.github.io/mincomp/about/">Minimal computing</a>” is a critical framework that places limits on hardware and software choices in order to prioritize the longevity of digital texts, the mitigation of technological obscolescence, and the maintenance of systems. Lantern applies this framework to the production of open textbooks.</p></div><h3 id="features">Features</h3><ul><li><p><strong>Free:</strong> Lantern uses open source software and free-of-charge web services for processing, building, deploying, and hosting open textbooks.</p></li><li><p><strong>Portable:</strong> Lantern emphasizes the use of plain text file formats that can run on any machine or web host. No databases or servers are required.</p></li><li><p><strong>Multi-format:</strong> Lantern teaches semantic markup technologies for producing Markdown, HTML, PDF, DOCX, and LaTeX editions of open textbooks.</p></li><li><p><strong>Sustainable:</strong> Lantern minimizes the infrastructure, configuration, hosting, and maintenance costs related to traditional digital publishing systems and platforms.</p></li><li><p><strong>Discoverable:</strong> Lantern produces harvestable metadata in <a href="https://www.openarchives.org/pmh/">OAI-PMH</a>, <a href="https://json-ld.org/">JSON-LD</a> and <a href="https://scholar.google.com/intl/en/scholar/inclusion.html#indexing">Google Scholar tags</a>.</p></li></ul><p>Lantern uses Markdown as a typesetting format for publishing and <a href="https://pandoc.org/">Pandoc</a> as it’s processing engine to produce publication formats, such as HTML, PDF, DOCX, and EPUB. Markdown as a source format provides many advantages for academic writing, OER production, and preservation:</p><blockquote><p>“Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions.” - <a href="https://daringfireball.net/projects/markdown/syntax#philosophy">John Gruber</a> (one of Markdown’s original creators)</p></blockquote><blockquote><p>Plain text files have many advantages over other formats. For one, they are readable on virtually all devices. They have also withstood the test of time better than other file types – if you’ve ever tried to open a document saved in a legacy word processor format, you’ll be familiar with the compatibility challenges involved. <span class="citation" data-cites="simpkin_getting_2015">(<strong>simpkin_getting_2015?</strong>)</span></p></blockquote><h3 id="who-is-lantern-for">Who is Lantern for?</h3><p>Lantern was developed as an open source toolkit for the open education community. We developed Lantern to help minimize the digital production, hosting, and maintenance costs of multi-format textbook publishing by using open source software, free web services, and <a href="https://lib-static.github.io/">static web technologies</a>. We hope our documentation helps people who are new to things like the command line terminal, Markdown, Git, and GitHub.</p><h3 id="credits">Credits</h3><p>Lantern is a project by Chris Diaz (Digital Publishing Librarian) and Lauren McKeen McDonald (Open Education Librarian) of Northwestern University with support from the <a href="https://www.arl.org/">Association of Research Libraries</a>. Lantern is based on <a href="https://github.com/wikiti/pandoc-book-template">Pandoc Book Template</a>, and was inspired by numerous publishing tools, including <a href="https://bookdown.org/">Bookdown</a>, <a href="https://quire.netlify.app/">Quire</a>, <a href="https://course-in-a-box.p2pu.org/">Course-in-a-Box</a>, <a href="https://collectionbuilder.github.io/">CollectionBuilder</a>, and <a href="https://minicomp.github.io/wax/">Wax</a>.</p><h2 id="quick-start">Quick Start</h2><p>Beginners might want to read the Technology Overview and the Online Workflow sections for guided instructions and context, but here’s a quick guide for anyone who’s ready to get started.</p><h3 id="required-software">Required Software</h3><ul><li>A text editor (e.g. <a href="https://code.visualstudio.com/">Visual Studio Code</a>)</li><li><a href="https://pandoc.org/">Pandoc</a>: document converstion tool</li><li><a href="https://lierdakil.github.io/pandoc-crossref/">Pandoc-crossref</a>: handles numbered references</li><li>A <a href="https://www.latex-project.org/get/#tex-distributions">LaTeX distribution</a>: for PDF typesetting and generation</li><li>(Windows only) <a href="https://gitforwindows.org/">Git Bash</a>: for running <code>.sh</code> scripts</li></ul><h3 id="get-the-template">Get the Template</h3><ul><li>Download a copy of the <a href="https://github.com/nulib-oer/lantern">template repository</a> via <code>git clone</code> or as a <code>.zip</code> archive.</li><li>Open the repository folder in your terminal</li><li>Test the sample outputs: <code>$ sh lantern.sh</code><ul><li>This will use the sample content in the <code>source</code> directory and the default configurations in the <code>assets</code> directory to build a website, PDF, EPUB, DOCX, and LaTeX editions of a textbook in the <code>public</code> directory.</li></ul></li><li>The terminal will return errors if you’re missing any required software in your <code>PATH</code></li><li>If you don’t see errors, you can open the <code>public</code> directory to see the sample outputs.</li></ul><p>If everything seems to work, you can delete or edit any of the files in the <code>source</code> directory.</p><h3 id="adding-your-content">Adding your Content</h3><p>Your new repository comes with a few files and folders you’ll be using to add and edit your manuscript content. All of these files and folders are contained in the <code>source</code> directory. These are the <strong>only</strong> files and folders you will need to edit to use Lantern for your textbook project.</p><ul><li><p><code>chapters/</code>: This folder contains the textbook chapter files</p></li><li><p><code>images/</code>: This folder contains the textbook images for figures, logos, covers, etc.</p></li><li><p><code>preprocess/</code>: If you add <code>.docx</code>, <code>.odt</code>, or <code>.tex</code> files to this folder, you can run <code>sh lantern.sh preprocess</code> to automatically convert these files to Markdown and add them to the <code>chapters/</code> folder</p></li><li><p><code>data/</code>: This folder stores data about our project, including metadata (<code>metadata.yml</code>), references in <a href="http://www.bibtex.org/Format/">BibTex format</a> (<code>references.bib</code>), and output configurations (<code>config.yml</code>).</p></li></ul><h3 id="build-commands">Build Commands</h3><ul><li><p><code>sh lantern.sh html</code>: Creates an <code>index.html</code> file for your textbook homepage and <code>textbook.html</code> for the HTML version.</p></li><li><p><code>sh lantern.sh pdf</code>: Creates a <code>textbook.pdf</code> file for your textbook with images embedded in appropriate places throughout the text.</p></li><li><p><code>sh lantern.sh epub</code>: Creates a <code>textbook.epub</code> file for your textbook with images embedded in appropriate places throughout the text. This file can be used with e-book readers.</p></li><li><p><code>sh lantern.sh docx</code>: Creates a <code>textbook.docx</code> file for your textbook with images embedded in appropriate places throughout the text. This file can be edited by other instructors interested in reusing or remixing the textbook content using Microsoft Word or other word processing software.</p></li><li><p><code>sh lantern.sh latex</code>: Creates a <code>textbook.tex</code> file for your textbook. This file can be edited by other instructors interested in reusing or remixing the textbook content using LaTeX.</p></li><li><p><code>sh lantern.sh oai</code>: Creates an OAI-PMH file (<code>oai.xml</code>) in the <code>public</code> folder for harvesting in library cataloging systems.</p></li><li><p><code>sh lantern.sh</code>: Does all of the above.</p></li><li><p><code>sh lantern.sh clean</code>: Deletes the <code>public</code> folder so that you can have a clean build. This does not affect the <code>source</code> folder.</p></li></ul><h3 id="deploy-your-website">Deploy your website</h3><p>Once you’re done editing your textbook, go to your terminal and <code>sh lantern.sh</code> to generate a fully-fuctional static website that you can be uploaded to any web server or hosting service. This command creates and places all of your output files within a folder called <code>public</code>. The contents within the <code>public</code> folder are intended to be ready for distribution with the public.</p><p>For example, you can use <a href="https://app.netlify.com/drop">Netlify Drop</a>. <a href="https://netlify.com">Netlify</a> is a web hosting service that specializes in static websites. Here’s a video to demonstrate the Netlify Drop feature:</p><iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/-LRlQ_jaLAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>If you want to give it a try, drag and drop the <code>public</code> folder from your computer to Netlify Drop to see your textbook project live on the web. From there, you can use the Netlify to manage your website, such as adding a custom domain name.</p>
+
+                                        <h2>Definitions</h2>
+                                        <dl>
+                                                <dt>Vocabulary Term</dt>
+                                            <dd>Definition of the term.</dd>
+                                                <dt>Vocabulary Term</dt>
+                                            <dd>Definition of the term.</dd>
+                                            </dl>                                </div>
+        </div>   
+    </main>
+    
+    <script>
+        /* AnchorJS docs: https://www.bryanbraun.com/anchorjs/ */
+        anchors.add();
+    </script>
+
+    <script>
+        (function() {
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+            if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+                links[i].target = '_blank';
+            }}
+        })();
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,63 @@
+.skip-link {
+    background: rgb(211, 211, 211);
+    color: rgb(57, 52, 134);
+    left: 50%;
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+  
+.skip-link:focus {
+    transform: translateY(0%);
+}
+
+.credit-line {
+    margin: 1rem 0;
+}
+
+.title-card {
+    height: 90vh;
+    padding: 5rem;
+}
+
+.title-card-body {
+    position:absolute;
+    top: 50%;
+}
+
+/* headings */
+
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+hgroup:after {
+    display: block;
+    max-width: 100px;
+    margin-top: 1rem;
+    border-bottom: 0.125rem solid var(--primary);
+    content: "";
+}
+
+/* buttons */
+
+article > footer > a {
+    margin: 0.5em;
+}
+
+article > footer > a:hover {
+    background-color: #1095c1;
+}
+
+/* metadata */
+
+details summary, details > dl > dt {
+    text-transform: uppercase;
+    font-weight: bold;
+}
