@@ -1,5 +1,7 @@
 # Lantern
 
+**WARNING:** Lantern is currently in the alpha development stage and is **not** production-ready. That said, you're welcome to [let us know your thoughts](https://github.com/nulib-oer/lantern/issues).
+
 ## Description
 
 This repository contains Lantern, an [OER](https://en.wikipedia.org/wiki/Open_educational_resources) publishing template for [Pandoc](http://pandoc.org/) that produces textbooks in multiple formats. 
