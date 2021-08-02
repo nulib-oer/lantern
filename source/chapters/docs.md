@@ -2,12 +2,6 @@
 
 Lantern is a [Pandoc](https://pandoc.org) template and workflow toolkit for making open textbooks. Lantern applies minimal computing techniques to [OER](https://en.wikipedia.org/wiki/Open_educational_resources) publishing. 
 
-::: box :::
-
-"[Minimal computing](https://go-dh.github.io/mincomp/about/)" is a critical framework that places limits on hardware and software choices in order to prioritize the longevity of digital texts, the mitigation of technological obscolescence, and the maintenance of systems. Lantern applies this framework to the production of open textbooks.
-
-:::
-
 ## Features
 
 - **Free:** Lantern uses open source software and free-of-charge web services for processing, building, deploying, and hosting open textbooks. 
@@ -20,15 +14,17 @@ Lantern is a [Pandoc](https://pandoc.org) template and workflow toolkit for maki
 
 - **Discoverable:** Lantern produces harvestable metadata in [OAI-PMH](https://www.openarchives.org/pmh/), [JSON-LD](https://json-ld.org/) and [Google Scholar tags](https://scholar.google.com/intl/en/scholar/inclusion.html#indexing).
 
+::: box :::
+
+"[Minimal computing](https://go-dh.github.io/mincomp/about/)" is a theoretical framework that places constraints on hardware and software choices in order to prioritize the longevity of digital texts, the mitigation of technological obscolescence, and the maintenance of systems. Lantern applies this framework to the production of open textbooks.
+
+:::
+
 Lantern uses Markdown as a typesetting format for publishing and [Pandoc](https://pandoc.org/) as it's processing engine to produce publication formats, such as HTML, PDF, DOCX, and EPUB. Markdown as a source format provides many advantages for academic writing, OER production, and preservation: 
 
 > "Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions." - [John Gruber](https://daringfireball.net/projects/markdown/syntax#philosophy) (one of Markdown's original creators)
 
 > Plain text files have many advantages over other formats. For one, they are readable on virtually all devices. They have also withstood the test of time better than other file types – if you’ve ever tried to open a document saved in a legacy word processor format, you’ll be familiar with the compatibility challenges involved. [@simpkin_getting_2015]
-
-## Who is Lantern for?
-
-Lantern was developed as an open source toolkit for the open education community. We developed Lantern to help minimize the digital production, hosting, and maintenance costs of multi-format textbook publishing by using open source software, free web services, and [static web technologies](https://lib-static.github.io/). We hope our documentation helps people who are new to things like the command line terminal, Markdown, Git, and GitHub. 
 
 ## Credits
 
@@ -63,7 +59,7 @@ Your new repository comes with a few files and folders you'll be using to add an
 
 - `chapters/`: This folder contains the textbook chapter files
 
-- `images/`: This folder contains the textbook images for figures, logos, covers, etc.
+- `static/`: This folder contains arbitrary static media assets you want to include with your textbook, such as images, audio, data, or text files you want people to be able to download as-is. By default, this folder contains an `images` subfolder for any figures you want to embed within the textbook, but you can create more subfolders for other types of static files. Lantern will respect the directory structure you set as it copies everything over to the `public` folder.
 
 - `preprocess/`: If you add `.docx`, `.odt`, or `.tex` files to this folder, you can run `sh lantern.sh preprocess` to automatically convert these files to Markdown and add them to the `chapters/` folder
 
