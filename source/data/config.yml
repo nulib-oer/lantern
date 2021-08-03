@@ -8,7 +8,7 @@ reference-section-title: "References"
 
 format: # full-text outputs
   - label: Documentation
-    link: textbook.html
+    link: documentation.html
   - label: GitHub Template Repository
     link: https://github.com/nulib-oer/lantern
 
