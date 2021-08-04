@@ -1,24 +1,23 @@
 # Technology Overview
 
-**Lantern assumes no prior experience with writing code.** Lantern provides all of the necessary guides, templates, and scripts to begin publishing open textbooks on GitHub or any other web hosting service.
-
 ::: box :::
 
-Lantern teaches two production workflows that use plain text to format chapter content and produce open textbooks in multiple formats from a single source. Specifically, Lantern will help you...
+**No prior coding experience is required to begin publishing OER with Lantern.** This toolkit provides all of the necessary instructions, templates, and scripts to begin publishing and sharing OER.
 
-1. Convert textbook manuscripts from common word processing formats to Markdown
-2. Format chapter content using Markdown syntax with a text editor
-3. Publish textbooks as a website with PDF, EPUB, LATEX, and DOCX download options
+Lantern provides two workflow options to guide you through producing OER in multiple formats from a single source. Once you've learned the workflows, you'll be able to:
+
+1. Take a textbook manuscript or other content and convert it from a word processing format (such as .docx) to Markdown
+2. Use Markdown syntax to format your content to include simple design elements such as bold, callout boxes, hyperlinks, tables, equations, and embedded media
+3. Publish the fully-accessible OER as a website with PDF, EPUB, LATEX, and DOCX download options
 
 :::
 
 ## Production Workflows
 
-We recommend the online workflow to first-time users of Lantern and the Desktop workflow to advanced users looking for more flexibility and customization.
 
-- The [**online** workflow](#online-workflow) is the simpler option, but it relies on [GitHub](https://github.com/) for document processing. This workflow does not use the command line or require any software installations.
+- The [**online** workflow](#online-workflow) is for first-time users of Lantern. This workflow does not require any software installations. It relies on [GitHub](https://github.com/) for document processing, and uses [GitHub Pages](https://pages.github.com/) as an option for a web hosting service. If you choose this workflow, you'll be ready to produce your own open textbooks in about 30 minutes.
 
-- The [**desktop** workflow](#desktop-workflow) is more complicated, but removes GitHub as a dependency. Some free software installation is required. This workflow uses the [command line](https://tutorial.djangogirls.org/en/intro_to_command_line/) to run scripts that Lantern provides.
+- The [**desktop** workflow](#desktop-workflow) is for advanced users who are already familiar with the online workflow, and who want a more robust environment to produce open textbooks. It removes GitHub as the document processor, and requires some free software installation. This workflow uses the command line to run scripts that Lantern provides. Depending on your operating system and permissions, if you choose this workflow, you'll be ready to produce your own textbooks in about 3 hours.
 
 The online workflow uses [GitHub Pages](https://pages.github.com/) as a web hosting service, but the output files can be uploaded to any other static website hosting service. 
 
@@ -67,8 +66,9 @@ Lantern provides [templates](https://github.com/nulib-oer/lantern/tree/main/asse
 Lantern uses a few open source programs to make the publishing outputs, but you won't interact with these programs directly if you're using the online workflow:
 
 - [Pandoc](https://pandoc.org/) uses the Markdown source files to produce the textbook editions
-- [LaTeX](https://www.latex-project.org/get/#tex-distributions) is used to process LaTeX code for building the PDF edition
+- [TinyTeX](https://yihui.org/tinytex/) is used to process LaTeX code for building the PDF edition
 - [Bash](https://www.gnu.org/software/bash/) is the shell used for handling input and output files
+- [Make](https://www.gnu.org/software/make/) simplifies the production settings and processes
 
 The online workflow provides a GitHub repository that is preconfigured to run all of the required processing scripts using [GitHub Actions](https://github.com/features/actions). The Desktop workflow requires installing and using Pandoc, TinyTeX, Bash, and Make to produce the output files on your computer.
 

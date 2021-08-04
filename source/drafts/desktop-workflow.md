@@ -1,7 +1,5 @@
 # Desktop Workflow
 
-_Estimated time to complete: 1-2 hours_
-
 The desktop workflow brings all of the required processing software to your computer. It's designed to remove GitHub as a dependency so that you can use any web hosting platform for publishing your open textbooks. In this tutorial, we'll walk you through the process of setting up your computer and running basic processing commands. 
 
 ::: box :::

@@ -1,7 +1,5 @@
 # Online Workflow 
 
-_Estimated time to complete: less than 1 hour_
-
 The Online Workflow is entirely web-based and uses [GitHub](https://github.com) as a publishing platform. This tutorial will guide you through the process of setting up your textbook project on GitHub. By the end of this tutorial, you will be able to use Lantern to create and publish open textbooks.
 
 ::: box :::
@@ -19,6 +17,7 @@ Following completion of this tutorial, you will be able to:
 ## Prerequisites
 
 - Create a [GitHub](https://github.com) account
+- Download the [example chapters](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing) as `.docx` or `.odt` files to your computer
 
 ## Create Your Online Workspace
 
@@ -43,6 +42,12 @@ A repository is a project folder that uses [Git](https://git-scm.com/) for versi
 4. Enter your new repository name for your textbook project. Use a lowercase name without spaces. This name will become part of your site URL. 
 
 ![Screenshot of the web form for creating a new repository](ow_new-repository.png)
+
+::: box :::
+
+_Example: `https://USERNAME.github.io/REPOSITORY-NAME` where `USERNAME` is your GitHub username._
+
+:::
 
 5. Most users should choose "Public" repository. If you are hosting on GitHub Pages it must be public unless you upgrade to a paid account.
 
