@@ -96,7 +96,7 @@ pdf() {
     awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $CHAPTERS >> chapters.md;
     mkdir -p $OUTPUT_DIRECTORY;
     $PANDOC_COMMAND chapters.md $LATEX -o $pdf;
-    mv chapters.md $OUTPUT_DIRECTORY/$OUTPUT_FILENAME.md
+    rm chapters.md;
     echo "📖 The PDF edition is now available in $pdf";
 }
 
@@ -104,6 +104,7 @@ latex() {
     awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $CHAPTERS >> chapters.md;
     mkdir -p $OUTPUT_DIRECTORY;
     $PANDOC_COMMAND chapters.md $LATEX -o $latex;
+    rm chapters.md;
     echo "📖 The LaTeX edition is now available in $latex";
 }
 
@@ -111,6 +112,7 @@ docx() {
     awk 'FNR==1 && NR!=1 {print "\n\n"}{print}' $CHAPTERS >> chapters.md;
     mkdir -p $OUTPUT_DIRECTORY;
     $PANDOC_COMMAND chapters.md $DOCX -o $docx;
+    rm chapters.md;
     echo "📖 The DOCX edition is now available in $docx";
 }
 
