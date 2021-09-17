@@ -17,15 +17,15 @@ After completing Lantern Online, you will be able to:
 
 ## Create Your Online Workspace
 
-1. Create a [GitHub](https://github.com) account. Login to your account.
+1. Create a [GitHub](https://github.com) account. Login to your account
 
 1. Visit [https://github.com/nulib-oer/lantern](https://github.com/nulib-oer/lantern)
 
-1. Click the green "Use This Template" button. This brings you to a "Create a new repository" form. 
+1. Click the green "Use This Template" button. This brings you to a "Create a new repository" form 
 
 ![Screenshot of the "Use this Template" button](ow_use-this-template.png)
 
-4. Enter your new repository name for your textbook project. Use a lowercase name without spaces. This name will become part of your site URL. 
+4. Enter your new repository name for your textbook project. Use a lowercase name without spaces. This name will become part of your site URL
 
 ![Screenshot of the web form for creating a new repository](ow_new-repository.png)
 
@@ -35,11 +35,11 @@ _Example: `https://USERNAME.github.io/REPOSITORY-NAME` where `USERNAME` is your 
 
 :::
 
-5. Most users should choose "Public" repository. If you are hosting on GitHub Pages it must be public unless you upgrade to a paid account.
+5. Most users should choose "Public" repository. If you are hosting on GitHub Pages it must be public unless you upgrade to a paid account
 
-1. Leave the "Include all branches" option unchecked; you only want the `main` branch. The other branches include experimental junk or files you won't need.
+1. Leave the "Include all branches" option unchecked; you only want the `main` branch. The other branches include experimental junk or files you won't need
    
-1. Click on the green button "Create repository from template." This will take you to your new repository.
+1. Click on the green button "Create repository from template." This will take you to your new repository
 
  **For an overview of GitHub's web interface and Lantern's template repository, see the video below**
 
@@ -70,7 +70,7 @@ OER need bibliographic metadata in order to be indexed by search engines and lib
 
 ### YAML Primer [LM: move to technology?]
 
-YAML is to JSON what Markdown is to HTML. It's a more human-readable (and human-writable) way to express and store data. 
+YAML is to JSON what markdown is to HTML. It's a more human-readable (and human-writable) way to express and store data. 
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cdLNKUoMc6c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -78,7 +78,7 @@ YAML needs to be valid, so if you ever hit an error, it's a good idea to check t
 
 :::
 
-1. Open the `metadata.yml` file to view the available metadata fields.
+1. Open the `metadata.yml` file to view the available metadata fields
 
 ![Screenshot of the first few lines of the "metadata.yml" file](ow_metadata.png)
 
@@ -88,7 +88,7 @@ YAML needs to be valid, so if you ever hit an error, it's a good idea to check t
 
 3.  Use GitHub's online text editor to replace the [placeholder metadata values with the information for your textbook](#metadata-in-yaml) (or any information to test it out). You can also delete any metadata fields you are not using, for example: `contributor`. 
 
-4.  When you're finished with your edits, scroll to the bottom of the page to the "Commit changes" form. 
+4.  When you're finished with your edits, scroll to the bottom of the page to the "Commit changes" form
 
 ![Screenshot of the commit changes form](ow_commit.png)
 
@@ -98,9 +98,9 @@ This form will help you create a _commit_ in your repository. A commit is a snap
 
 :::
 
-5. When you're ready to make the commit, you can keep the default setting for committing directly to the `main` branch. 
+5. When you're ready to make the commit, you can keep the default setting for committing directly to the `main` branch
 
-6.  Click on the "Commit changes" button.
+6.  Click on the "Commit changes" button
 
 This action will trigger a few things for your new textbook:
 
@@ -169,13 +169,13 @@ You can now edit any of these files using GitHub's online text editor.
 
 The conversion process between word processing formats and markdown won't be perfect, so you may need to spend some time correcting any formatting errors or removing any unnecessary markup. 
 
-1. Click on the "03-probability.md" file.
+1. Click on the "03-probability.md" file
 
 ![Screenshot of the Probabilities example chapter on GitHub](ow_probability.png)
 
 GitHub will render the raw markdown as formatted HTML (without any styles) in order to give you a preview of how the content will look in its final state.
 
-2. Click on the pencil icon labelled "Edit this File" near the right side of the screen.
+2. Click on the pencil icon labelled "Edit this File" near the right side of the screen
 
 The editor view of the file will allow you to edit the raw markdown contents as well as the file name itself (including the extension). We'll need to edit this file because there's a problem with the title of the chapter. 
 
@@ -183,16 +183,16 @@ The editor view of the file will allow you to edit the raw markdown contents as 
 
 The title of this particular chapter is not formatted properly. Instead of marking the title as a heading, the title is formatted as `**bold**`. This is a common problem with word processing formats, wherein headings are representing _visually_ but not _semantically_. Markdown uses specific syntax to mark contents as headings.
 
-3. Change the `**Probability**` heading to a proper markdown heading: `# Probability`.
+3. Change the `**Probability**` heading to a proper markdown heading: `# Probability`
 
 All chapter files using Lantern must begin with the title of the chapter formatted as a "Heading 1" or a first-level heading using the hashtag symbol (`#`). The number of hashtags corresponds to the level that heading represents (for example, one hashtag converts to a `<h1>` tag when the output is HTML). There are typically between 1 and 6 heading level options. 
 
-4. Now click on the "Preview" tab to see how that syntax change affected the output of the heading.
+4. Now click on the "Preview" tab to see how that syntax change affected the output of the heading
 
 ![Screenshot of the HTML preview for the Probabilities chapter](ow_preview.png)
 
-5. There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2," or section heading.
-6. Scroll down to the bottom of the page and click on the "Commit changes" button to save these changes to your textbook.
+5. There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2," or section heading
+6. Scroll down to the bottom of the page and click on the "Commit changes" button to save these changes to your textbook
 7. Check the changes on your live website by visiting the URL you generated previously at `https://USERNAME.github.io/REPOSITORY-NAME`
 
 That's it! You've learned how to create OER using open source tools and minimal computing methods. If you'd like to learn how to further customize and edit your OER, adding media and special formatting, visit the relevant sections in the menu.
