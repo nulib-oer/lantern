@@ -1,37 +1,23 @@
-# Online Workflow 
+# Getting Started 
 
-The Online Workflow is entirely web-based and uses [GitHub](https://github.com) as a publishing platform. This tutorial will guide you through the process of setting up your textbook project on GitHub. By the end of this tutorial, you will be able to use Lantern to create and publish open textbooks.
+Lantern Online is entirely web-based and uses [GitHub](https://github.com) as a publishing platform. GitHub is a website that hosts Git repositories. Your OER will live in a repository, and once you create a GitHub account, you'll be able to edit, customize, publish, and clone your OER projects in one place.
+
+These instructions will guide you through creating an open textbook, but once you learn the workflow, you can use Lantern to publish other things such as meeting or presentation notes, conference proceedings, or smaller bits of OER content to name a few examples.
 
 ::: box :::
 
 **Learning Objectives**
 
-Following completion of this tutorial, you will be able to:
-
-- Examine the Lantern publishing workflow without installing any software
+After completing Lantern Online, you will be able to:
 - Use GitHub as an online OER workspace and hosting platform
-- Apply basic Markdown formatting for open textbook production
+- Apply basic Markdown formatting for OER production
+- Publish OER in HTML, PDF, EPUB, and LaTex formats
 
 :::
-
-## Prerequisites
-
-- Create a [GitHub](https://github.com) account
-- Download the [example chapters](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing) as `.docx` or `.odt` files to your computer
 
 ## Create Your Online Workspace
 
-Your online workspace will be a repository on GitHub. Your repository will contain all of the source files for your textbook. Lantern provides a template repository that you can copy to your GitHub account.
-
-::: box :::
-
-A repository is a project folder that uses [Git](https://git-scm.com/) for version control. [GitHub](https://github.com) is a website for hosting Git repositories. **This video introduces GitHub's web interface and Lantern's template repository.**
-
-<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/YPo1nlT2XMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-:::
-
-1. Login to [GitHub](https://github.com)
+1. Create a [GitHub](https://github.com) account. Login to your account.
 
 1. Visit [https://github.com/nulib-oer/lantern](https://github.com/nulib-oer/lantern)
 
@@ -55,9 +41,14 @@ _Example: `https://USERNAME.github.io/REPOSITORY-NAME` where `USERNAME` is your 
    
 1. Click on the green button "Create repository from template." This will take you to your new repository.
 
-## Repository Files and Folders
+ **For an overview of GitHub's web interface and Lantern's template repository, see the video below**
 
-Your new repository comes with a few files and folders you'll be using to add and edit your manuscript content. All of these files and folders are contained in the `source` directory. These are the **only** files and folders you will need to edit to use Lantern for your textbook project. Click on the `source` folder to view its contents.
+<iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube-nocookie.com/embed/YPo1nlT2XMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## View Your Repository Files and Folders
+
+Your new repository comes with a few files and folders you'll be using to add and edit your manuscript content. All of these files and folders are contained in the `source` directory. These are the **only** files and folders you will need to edit to use Lantern for your project. Click on the `source` folder to view its contents.
 
 ![Screenshot of the "source" folder contents](ow_source-directory.png)
 
@@ -67,17 +58,17 @@ Your new repository comes with a few files and folders you'll be using to add an
 
 - `preprocess/`: If you upload `.docx`, `.odt`, or `.tex` files to this folder, Lantern will convert these files to Markdown and add them to the `chapters/` folder
 
-- `metadata.yml`: This file defines the bibliographic metadata for your textbook
+- `metadata.yml`: This file defines the bibliographic metadata for the textbook
 
-- `references.bib`: This file contains the bibliography for your textbook in [BibTex format](http://www.bibtex.org/Format/)
+- `references.bib`: This file contains the bibliography for the textbook in [BibTex format](http://www.bibtex.org/Format/)
 
-## Metadata
+## Adding Metadata
 
-Textbooks need bibliographic metadata in order to be indexed by search engines and library catalogs. Lantern stores metadata about the textbook in a YAML file. The information stored in the YAML file will be used to fill the templates for each of the publication formats. 
+OER need bibliographic metadata in order to be indexed by search engines and library catalogs. Lantern stores metadata about the OER in a YAML file. The information stored in the YAML file will be used to fill the templates for each of the publication formats. If you want to take a deep dive into YAML, visit the technology page. Otherwise, continue reading.
 
 ::: box :::
 
-### YAML Primer
+### YAML Primer [LM: move to technology?]
 
 YAML is to JSON what Markdown is to HTML. It's a more human-readable (and human-writable) way to express and store data. 
 
@@ -87,34 +78,34 @@ YAML needs to be valid, so if you ever hit an error, it's a good idea to check t
 
 :::
 
-- Open the `metadata.yml` file to view the available metadata fields.
+1. Open the `metadata.yml` file to view the available metadata fields.
 
 ![Screenshot of the first few lines of the "metadata.yml" file](ow_metadata.png)
 
-- To edit the file with your textbook's information, click on the pencil icon labelled "Edit this File" near the right side of the screen
+2.  To edit the file with your textbook's information, click on the pencil icon labelled "Edit this File" near the right side of the screen
 
 ![Screenshot of the editing icon](ow_edit-this-file.png)
 
-- Use GitHub's online text editor to replace the [placeholder metadata values with your textbook's information](#metadata-in-yaml) (or any information to test it out). You can also delete any metadata fields you are not using, for example: `contributor`. 
+3.  Use GitHub's online text editor to replace the [placeholder metadata values with the information for your textbook](#metadata-in-yaml) (or any information to test it out). You can also delete any metadata fields you are not using, for example: `contributor`. 
 
-- When you're finished with your edits, scroll to the bottom of the page to the "Commit changes" form. 
+4.  When you're finished with your edits, scroll to the bottom of the page to the "Commit changes" form. 
 
 ![Screenshot of the commit changes form](ow_commit.png)
 
 ::: box :::
 
-This form will help you create a _commit_ in your repository. A commmit is a snapshot of a repository. Each commit is an opportunity to briefly log the purpose of your changes to the repository, which is helpful for keeping track of the project's development.
+This form will help you create a _commit_ in your repository. A commit is a snapshot of a repository. Each commit is an opportunity to briefly log the purpose of your changes to the repository, which is helpful for keeping track of the project's development.
 
 :::
 
-- When you're ready to make the commit, you can keep the default setting for committing directly to the `main` branch. 
+5. When you're ready to make the commit, you can keep the default setting for committing directly to the `main` branch. 
 
-- Click on the "Commit changes" button.
+6.  Click on the "Commit changes" button.
 
 This action will trigger a few things for your new textbook:
 
 - Your textbook is built as a website as well as several additional output formats: PDF, LaTeX, EPUB, and DOCX
-- These files are saved to a new "branch" in your repository called `gh-pages`
+- These files are saved to a new "branch" in your repository called `gh-pages` 
 
 The `gh-pages` branch of your repository acts as your web server, where every file in this branch can be made accessible via the URL of your textbook. The URL for your textbook is created, by default, using this pattern: `https://USERNAME.github.io/REPOSITORY-NAME`
 
@@ -122,22 +113,26 @@ The `gh-pages` branch of your repository acts as your web server, where every fi
 
 While your website is ready to go live, it is not live yet. You'll have to make a change to the settings in your repository. 
 
-- Click on the "Settings" tab from the home page of your repository
-- In the left sidebar, click on the "Pages" link
+7. Click on the "Settings" tab from the home page of your repository
+8.  In the left sidebar, click on the "Pages" link
 
 ![Screenshot highlighting the Pages link from the settings tab](ow_pages.png)
 
 [GitHub Pages](https://pages.github.com) is a free static website hosting service from GitHub. In order to use this service for our textbook project, we'll need to point the web host to the source of our textbook's website files, which is the `gh-pages` branch of our repository.
 
-- In the "Source" drop-down menu, select `gh-pages`
-- Keep the section drop-down menu option as: `/(root)`
-- Click save
+9.  In the "Source" drop-down menu, select `gh-pages`
+10. Keep the section drop-down menu option as: `/(root)`
+11. Click save
 
 After about one minute or so, your website will be live at: `https://USERNAME.github.io/REPOSITORY-NAME`
 
 Each time you add, edit, or delete files in the `source` directory by committing changes to your repository, your textbook's website will refresh with the new content.
 
-## Chapters
+If you accidentally make an error in your code, you will receive a message from GitHub to your email address informing you of the error. It's nothing to worry about. If the error is something you can't resolve on your own, or you have questions, [let us know by posting an issue in GitHub](https://github.com/nulib-oer/lantern/issues).
+
+## Adding Content
+
+[LM Note: leave for Chris to update instructions since numbers in file name no longer necessary]
 
 The `chapters/` folder includes two sample chapters formatted in Markdown for your reference: `01-introduction.md` and `02-chapter-example.md`. Lantern looks for files in this folder to build out the chapters of the textbook. 
 
@@ -151,19 +146,18 @@ By default, Lantern sets the order of the chapters using the file name. You can 
 
 ### Converting to Markdown
 
-Most OER authors are not writing their manuscripts in Markdown (yet!), so we'll need to convert from more common file formats. The [example chapters](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing) are Google Docs that can be downloaded as `.docx` or `.odt` files, which are the file types that most word processing software use. 
+Most OER authors are not writing their manuscripts in Markdown (yet!), so we'll need to convert from more common file formats. We created several example chapters that you can use for this tutorial. Download the [example chapters](https://drive.google.com/drive/folders/1Fl__DhDXDFyoPmwX0CHpfj10qhOY3t0k?usp=sharing) as `.docx` or `.odt` files to your computer. Ignore the README file, as we don't need it for this exercise.
 
-Lantern includes a micro-workflow that will help you convert raw manuscript files from `.docx` or `.odt` to Markdown (`.md`).
+If you'd rather follow along using your own content, feel free! Just make sure the sections of the manuscript you're working with are in .docx or .odt format. Lantern includes a micro-workflow that will help you convert raw manuscript files from `.docx` or `.odt` to Markdown (`.md`).
 
-- Download the example chapter files from the Google Drive, ignoring the README file, which we don't need
-- Save the files to your computer.
-- In your GitHub repository, click on the "source" folder, then click on the "preprocess" folder. The "preprocess" folder is intended for you to upload `.docx` or `.odt` files.
+1. Locate the example chapter files you downloaded from the Google Drive. 
+2. In your GitHub repository, click on the "source" folder, then click on the "preprocess" folder. The "preprocess" folder is intended for you to upload `.docx` or `.odt` files.
 
 ![Screenshot of the preprocess folder on GitHub](ow_preprocess.png)
 
-- Click on the "Add file" drop-down menu and select "upload files"
-- Upload one or more of the `.docx` or `.odt` files
-- Click on the "Commit changes" button and (optionally) add a message about the uploads
+3. Click on the "Add file" drop-down menu and select "upload files"
+4. Upload one or more of the `.docx` or `.odt` files
+5. Click on the "Commit changes" button and if you want, add a message describing the changes you made
 
 This action will trigger the GitHub repository to convert your `.docx` or `.odt` chapter files to markdown, then add the markdown files to the `source/chapters/` folder. The action takes a minute or two to complete. This folder should now look something like this:
 
@@ -175,13 +169,13 @@ You can now edit any of these files using GitHub's online text editor.
 
 The conversion process between word processing formats and markdown won't be perfect, so you may need to spend some time correcting any formatting errors or removing any unnecessary markup. 
 
-- Click on the "03-probability.md" file
+1. Click on the "03-probability.md" file.
 
 ![Screenshot of the Probabilities example chapter on GitHub](ow_probability.png)
 
 GitHub will render the raw markdown as formatted HTML (without any styles) in order to give you a preview of how the content will look in its final state.
 
-- Click on the pencil icon labelled "Edit this File" near the right side of the screen
+2. Click on the pencil icon labelled "Edit this File" near the right side of the screen.
 
 The editor view of the file will allow you to edit the raw markdown contents as well as the file name itself (including the extension). We'll need to edit this file because there's a problem with the title of the chapter. 
 
@@ -189,15 +183,21 @@ The editor view of the file will allow you to edit the raw markdown contents as 
 
 The title of this particular chapter is not formatted properly. Instead of marking the title as a heading, the title is formatted as `**bold**`. This is a common problem with word processing formats, wherein headings are representing _visually_ but not _semantically_. Markdown uses specific syntax to mark contents as headings.
 
-- Change the `**Probability**` heading to a proper markdown heading: `# Probability`
+3. Change the `**Probability**` heading to a proper markdown heading: `# Probability`.
 
 All chapter files using Lantern must begin with the title of the chapter formatted as a "Heading 1" or a first-level heading using the hashtag symbol (`#`). The number of hashtags corresponds to the level that heading represents (for example, one hashtag converts to a `<h1>` tag when the output is HTML). There are typically between 1 and 6 heading level options. 
 
-- Now click on the "Preview" tab to see how that syntax change affected the output of the heading
+4. Now click on the "Preview" tab to see how that syntax change affected the output of the heading.
 
 ![Screenshot of the HTML preview for the Probabilities chapter](ow_preview.png)
 
-- There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2", or section heading.
-- Scroll down to the bottom of the page and click on the "Commit changes" button to save these changes to your textbook
+5. There is another heading error in the file. Change `**Introduction to Probability Standard**` in line 19 to `## Introduction to Probability Standard` so that it represents a "Heading 2," or section heading.
+6. Scroll down to the bottom of the page and click on the "Commit changes" button to save these changes to your textbook.
+7. Check the changes on your live website by visiting the URL you generated previously at `https://USERNAME.github.io/REPOSITORY-NAME`
 
-This completes the tutorial. The tutorial **only** covers setting up your workspace and adding your own content. To create a new project for the real world, you can repeat these steps then read the documentation on formatting, metadata, and customizations. 
+That's it! You've learned how to create OER using open source tools and minimal computing methods. If you'd like to learn how to further customize and edit your OER, adding media and special formatting, visit the relevant sections in the menu.
+
+## Starting a New Project
+If you want to start a new project, simply repeat the setup steps listed at the beginning of this tutorial, and be sure to give each new project a new name. Since Lantern's template has existing content in the chapter folders, feel free to delete those or replace with your own content.
+
+ 
