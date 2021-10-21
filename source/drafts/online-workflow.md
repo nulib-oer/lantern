@@ -2,7 +2,7 @@
 
 Lantern Online is entirely web-based and uses [GitHub](https://github.com) as a publishing platform. GitHub is a website that hosts Git repositories. Your OER will live in a repository, and once you create a GitHub account, you'll be able to edit, customize, publish, and clone your OER projects in one place.
 
-These instructions will guide you through creating an open textbook, but once you learn the workflow, you can use Lantern to publish other things such as meeting or presentation notes, conference proceedings, or smaller bits of OER content to name a few examples.
+These instructions will guide you through creating an open textbook, but once you learn the workflow, you can use Lantern to publish other things such as meeting or presentation notes, conference proceedings, or smaller bits of OER content, to name a few.
 
 ::: box :::
 
