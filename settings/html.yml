@@ -1,0 +1,55 @@
+# pandoc settings for html output format
+# for all available options, see 
+# https://pandoc.org/MANUAL.html#default-files
+
+metadata-file: 
+  - metadata.yml
+  - settings/config.yml
+  #- source/data/definitions.yml
+
+from: markdown
+to: html5
+
+template: templates/html.html
+standalone: true
+
+# table of contents
+table-of-contents: true
+toc-depth: 3
+
+# section numbers
+number-sections: false
+number-offset: [0,0,0,0,0,0]
+
+filters:
+  - lib/lua/questions.lua
+  - lib/lua/siteurl.lua
+
+# citations
+citeproc: true
+bibliography:
+  - references.bib
+
+# math, see https://pandoc.org/MANUAL.html#math-rendering-in-html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+# code blocks
+highlight-style: pygments
+preserve-tabs: true
+
+# html markup settings
+shift-heading-level-by: 1
+section-divs: false
+wrap: none
+# identifier-prefix: lantern
+# title-prefix: ""
+# strip-empty-paragraphs: true
+strip-comments: true
+default-image-extension: ".jpg"
+email-obfuscation: javascript
+html-q-tags: false
+
+# set to true if you want a preservation copy of the html output
+self-contained: false 

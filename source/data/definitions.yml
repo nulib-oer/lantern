@@ -1,9 +1,0 @@
-# generate a glossary of key terms
-
-definitions:
-  -
-    term: Vocabulary Term
-    definition: Definition of the term.
-  -
-    term: Vocabulary Term
-    definition: Definition of the term.

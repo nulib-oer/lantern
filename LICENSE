@@ -1,13 +1,13 @@
 This repository contains third-party software that are excluded from this license, including:
 
-- PicoCSS (/assets/lib/pico.min.css), Licensed under MIT
-- Pandoc Lua filters (/assets/scripts/number-sections-filter.lua)
+- PicoCSS files (`lib/css/pico.min.css`, `lib/css/theme.css`, `lib/js/minimal-theme-switcher.js`): Copyright (c) 2019-2021 Pico, Licensed under MIT
+- Nyum files (`lib/js/search.js`, `templates/faux_urlencode.awk`, `templates/metadata.template.json`, and `templates/category.template.txt`): Copyright (c) 2021 Noah Doersing, Licensed MIT
 
 Everything else:
 
 MIT License
 
-Copyright (c) 2021 Chris Diaz
+Copyright (c) 2021-2022 Chris Diaz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

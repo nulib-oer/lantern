@@ -1,0 +1,237 @@
+\documentclass{book}
+
+\title{$title$}
+\newcommand{\subtitle}{$subtitle$}
+\newcommand{\booklicense}{\href{$copyright.license-uri$}{$copyright.license$}}
+
+% authors %
+\author{$for(author)$$author.name$$sep$ \and $endfor$}
+\newcommand{\authoraffiliation}{$author.affiliation$}
+
+% Create convenient commands \booktitle and \bookauthor
+\makeatletter
+\newcommand{\booktitle}{\@title}
+\newcommand{\bookauthor}{\@author}
+\makeatother
+
+% This utf8 declaration is not needed for versions of latex > 2018 but may
+% be helpful for older software. Eventually it may not be worth keeping.
+%\usepackage[utf8]{inputenc}  
+
+\usepackage{amsmath} % Used by equations
+\usepackage{hyperref}
+% link options
+\hypersetup{
+  colorlinks=true,
+  linkcolor=purple,
+  urlcolor=purple,
+  pdftitle={$title$},
+  pdflang={$lang$},
+  pdfcreator={LaTeX via pandoc}
+}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{graphicx}
+% sets image width to text body width
+\setkeys{Gin}{width=\linewidth} 
+\usepackage{xcolor}
+\definecolor{purple}{HTML}{663399}
+
+% The following dimensions specify 4.75" X 7.5" content on 6 3/8" by 9 1/4"
+% paper. The paper width and height can be tweaked as required and the content
+% should size to fit within the margins accordingly.
+%
+% The (inside) bindingoffset should be larger for books with more pages. Some
+% standard recommended sizes are .375in minimum up to 1in for 600+ page books.
+% Sizes .75in and .875in are also recommended roughly at 150 and 400 pages.
+\usepackage[bindingoffset=$paper.gutter$,
+            left=$paper.margin.left$, 
+            right=$paper.margin.right$,
+            top=$paper.margin.top$, 
+            bottom=$paper.margin.bottom$,
+            paperwidth=$paper.width$, 
+            paperheight=$paper.height$]{geometry}
+% Here is an alternative geometry for reading on letter size paper:
+% \usepackage[margin=.75in, paperwidth=8.5in, paperheight=11in]{geometry}
+
+\usepackage[normalem]{ulem} % underlined text
+
+\renewcommand{\contentsname}{$toc-title$} 
+
+% pandoc settings %
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\newenvironment{Shaded}{
+    \begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+}
+
+\newenvironment{shaded*}{
+    \begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+}
+
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+$endif$
+
+
+% Content Starts Here
+\begin{document}
+\frontmatter
+
+% ---- Half Title Page ----
+% current geometry will be restored after title page
+\newgeometry{top=1.75in,bottom=.5in}
+\begin{titlepage}
+\begin{flushleft}
+
+% Title
+\textbf{\fontsize{48}{54}\selectfont $title$ \\}
+\textbf{\large \textit{$subtitle$}}
+
+% Draw a line 4pt high
+\par\noindent\rule{\textwidth}{4pt}\\
+
+% authors
+\begin{flushright}
+
+  $for(author)$
+    \textbf{$author.name$}, \emph{$author.affiliation$}\\
+  $endfor$
+
+\end{flushright}
+
+% \vspace{\fill}
+\vspace{\fill}
+
+\end{flushleft}
+$if(publisher)$
+\begin{center}
+  %\includegraphics{booksvg.pdf}\\[4pt]
+  \fontfamily{lmtt}\small{$publisher.name$\\
+  $publisher.location$\\
+  $publisher.website$}
+\end{center}
+$endif$  
+\end{titlepage}
+\restoregeometry
+% ---- End of Half Title Page ----
+
+% Do not show page numbers on colophon page
+\thispagestyle{empty}
+
+\begin{flushleft}
+
+\textbf{Copyright \textcopyright{} $publication-year$  $copyright.holder$\\
+License: \booklicense}\\[11pt] 
+
+$if(copyright.exceptions)$
+\textbf{Exceptions} \\
+
+Except where otherwise noted, this book is licensed under a $copyright.license$. To view a copy of this license, visit $copyright.license-uri$
+
+The following material is excluded from the license: 
+
+\begin{itemize}
+  $for(copyright.exceptions)$
+  \item $copyright.exceptions$
+  $endfor$
+\end{itemize}
+
+$copyright.exceptions$
+$endif$
+
+For permissions beyond the scope of this license, visit $publisher.website$
+
+\vspace*{\fill}
+
+\begin{description}
+  \item[Recommended Citation] \hfill \\ $copyright.attribution$
+  \item[Publisher] \hfill \\ $publisher.name$, $publisher.location$
+  \item[Date] \hfill \\ $publication-year$
+  $if(website)$
+  \item[Website] \hfill \\ $website$
+  $endif$
+  $if(isbn-p)$
+  \item[ISBN] \hfill \\ $isbn-p$ pbk.
+  $endif$
+  $if(isbn-e)$
+  \item[eISBN] \hfill \\ $isbn-e$
+  $endif$
+  $if(doi)$
+  \item[DOI] \hfill \\ \href{https://doi.org/$doi$}{$doi$}
+  $endif$
+  \item[Subjects] \hfill \\ $for(subjects)$$subjects$$sep$, $endfor$
+  \item[keywords] \hfill \\ $for(keywords)$$keywords$$sep$, $endfor$
+  $if(contributor)$
+  \item[Contributors] \hfill \\ $for(contributor)$$contributor$$sep$, $endfor$
+  $endif$
+
+\end{description}
+
+$if(publisher.disclaimer)$
+\textbf{Disclaimer} \\
+  $publisher.disclaimer$
+$endif$
+
+\vspace*{\fill}
+
+This book was typeset using \LaTeX{} software and processed with \href{https://pandoc.org}{Pandoc} using the \href{http://lantern.northwestern.pub}{Lantern} publishing workflow.\\
+
+\end{flushleft}
+
+% A title page resets the page # to 1, but the second title page
+% was actually page 3. So add two to page counter.
+\addtocounter{page}{2}
+
+% The asterisk excludes chapter from the table of contents.
+\chapter*{About this Book}
+$description$
+
+% Three-level Table of Contents
+\setcounter{tocdepth}{3}
+\tableofcontents
+
+\mainmatter
+
+$body$
+
+\backmatter
+\end{document}

@@ -1,0 +1,62 @@
+# pandoc settings for html output format
+# for all available options, see 
+# https://pandoc.org/MANUAL.html#default-files
+
+metadata-file: 
+  - metadata.yml
+  - settings/config.yml
+  #- source/data/definitions.yml
+
+#epub-cover-image: source/static/images/cover.png
+
+from: markdown
+to: epub3
+
+template: templates/epub.html
+standalone: true
+
+# table of contents
+table-of-contents: true
+toc-depth: 3
+
+# section numbers
+number-sections: false
+
+# citations
+citeproc: true
+bibliography:
+  - references.bib
+
+# code blocks
+highlight-style: pygments
+preserve-tabs: true
+
+# html markup settings
+#shift-heading-level-by: 1 # h1 headings in markdown become h2 in html
+section-divs: true
+wrap: none
+# identifier-prefix: lantern
+# title-prefix: ""
+# strip-empty-paragraphs: true
+strip-comments: true
+default-image-extension: ".jpg"
+email-obfuscation: javascript
+html-q-tags: false
+
+self-contained: true
+
+# part, chapter, section, or default:
+top-level-division: chapter
+abbreviations:
+
+epub-subdirectory: EPUB
+epub-chapter-level: 1
+
+css: 
+  - lib/css/html.css
+  - lib/css/custom.css
+
+# this is also called in lantern.sh, not sure where to put these settings
+#resource-path:
+#  - .
+#  - source/images/

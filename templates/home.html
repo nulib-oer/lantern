@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="$lang$" data-theme="auto" $if(dir)$dir="$dir$" $endif$>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Pandoc via Lantern" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    <title>$if(publisher)$$title$ | $publisher.name$$else$$title$$endif$</title>
+$for(author)$    <meta name="author" content="$if(author.name)$$author.name$$else$$author$$endif$" />$endfor$
+$if(publication-year)$   <meta name="dcterms.date" content="$publication-year$" />$endif$
+$if(keywords)$   <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />$endif$
+
+    <!-- Bibliographic Metadata -->
+    <meta name="citation_title" content="$title$">
+$if(publication-year)$   <meta name="citation_year" content="$publication-year$">$endif$
+    <meta name="citation_language" content="$lang$">
+$if(keyword)$$for(keyword)$     <meta name="citation_keywords" content="$keyword$">$endfor$$endif$
+$if(publisher)$     <meta name="citation_publisher" content="$publisher.name$">$endif$
+$if(isbn_e)$     <meta name="citation_isbn" content="$isbn_e$">$endif$
+$for(author)$    <meta name="citation_author" content="$if(author.name)$$author.name$$else$$author$$endif$">$endfor$ 
+$if(book_editor)$    <meta name="citation_author" content="$editor.book$ (Book Editor)">$endif$
+$if(series_editor)$     <meta name="citation_author" content="$editor.series$ (Series Editor)">$endif$ 
+$if(doi)$    <meta name="dc.identifier" content="$doi$"> $endif$
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="$title$" />
+$if(description)$    <meta property="og:description" content="$description$" />$endif$
+    <meta property="og:image" content="cover.png" />
+$if(url)$    <meta property="og:url" content="$url$">$endif$
+    <meta property="og:site_name" content="$title$">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="$title$" />
+$if(description)$    <meta name="twitter:description" content="$description$" />$endif$
+    <meta name="twitter:image" content="cover.png" />
+$if(url)$    <meta property="twitter:domain" content="$url$">$endif$
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@id": "https://doi.org/$doi$",
+            "@type": "Book",
+            "name": "$title$",
+            "author": "$for(author)$$if(author.name)$$author.name$$else$$author$$endif$$sep$, $endfor$",
+            "url": "$url$",
+            "datePublished": "$publication-year$"
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+<![endif]-->
+
+    <link rel="stylesheet" href="css/pico.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/theme-switcher.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/custom.css"> $for(header-includes)$ $header-includes$ $endfor$
+</head>
+
+<body>
+    <a class="skip-link" href="#info">
+        Skip to book information.
+    </a> $for(include-before)$ $include-before$ $endfor$
+
+    <div class="theme-switcher">
+        <ul>
+            <li><a href="#" data-theme-switcher="light">Light</a></li>
+            <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+        </ul>
+    </div>
+
+    <div class="title-card">
+
+        <div class="title-card-body">
+
+            <hgroup>
+                <h1>$title$</h1>
+                $if(subtitle)$
+                <h2>$subtitle$</h2>
+                $endif$
+            </hgroup>
+            <small><em>$for(author)$$if(author.name)$$author.name$$else$$author$$endif$$sep$, $endfor$</em></small>
+        </div>
+
+    </div>
+
+    <main class="container">
+
+        <!-- not yet working :(
+        <aside class="search">
+            <input type="text" placeholder="Search..." id="search_input" disabled>
+            <div class="results" id="search_output"></div>
+            <script src="js/search.js"></script>
+        </aside>
+        -->
+        <article>
+            $if(description)$
+            <header>
+                <aside>
+                    <h2>Description</h3>
+                    $description$
+                </aside>
+
+
+                $if(download)$
+                <details open>
+                    <summary>Download</summary>
+                    $for(download)$<a href="$it.link$" role="button" class="secondary">$it.label$</a>$endfor$
+                </details>
+                $endif$
+            </header>
+            $endif$
+            
+            <hgroup>
+                <h2>$toc-title$</h2>
+            </hgroup>
+
+            <aside>
+                <nav>
+                    <ul>${for(chapter_list)}
+                        <li><a href="${it.htmlfile}">${it.chapter_title}</a></li>${endfor}
+                    </ul>
+                </nav>
+            </aside>
+
+            <footer>
+
+                <details open>
+                    <summary><strong>More Information</strong></summary>
+                    <dl>
+                        $if(subjects)$
+                        <dt>Subjects</dt>
+                        <dd>$for(subjects)$$subjects$$sep$, $endfor$</dd>
+                        $endif$
+
+                        <dt>Copyright</dt>
+                        <dd>$if(copyright.statement-uri)$
+                            <a href="$copyright.statement-uri$">$publication-year$ &copy; 
+                                $if(copyright.holder)$
+                                $copyright.holder$
+                                $elseif(author.name)$
+                                $for(author)$
+                                $author.name$
+                                $endfor$
+                                $else$
+                                $author$
+                                $endif$
+                            </a>
+                            $else$
+                            $publication-year$ &copy; 
+                                $if(copyright.holder)$$copyright.holder$$endif$
+                                $if(author.name)$
+                                $for(author)$
+                                $author.name$
+                                $endfor$
+                                $else$
+                                $author$
+                                $endif$
+                            $endif$
+                        </dd>
+                        $if(copyright.license)$
+                        <dt>License</dt>
+                        <dd><a href="$copyright.license-uri$">$copyright.license$</a></dd>
+                        $endif$
+                        $if(publisher)$
+                        <dt>Publisher</dt>
+                        <dd><a href="$publisher.website$">$publisher.name$</a></dd>
+                        $endif$
+                        $if(contributor)$
+                        <dt>Contributors</dt>
+                        <dd>$for(contributor)$$contributor$$sep$, $endfor$</dd>
+                        $endif$
+                        $if(copyright.attribution)$
+                        <dt>Preferred Attribution</dt>
+                        <dd>$if(copyright.attribution)$$copyright.attribution$$else$$for(author)$$author.name$$sep$, $endfor$, <em><a ref="$url$">$title$ $if(subtitle)$: $subtitle$$endif$.</a></em> $publisher.location$: <a href="$publisher-website$">$publisher.name$</a>,
+                            $publication-year$.$endif$
+                        </dd>
+                        $endif$
+                    </dl>
+                </details>
+
+            </footer>
+        </article>
+
+        <div class="credit-line">
+            <small>Built with <a href="https://nulib-oer.github.io/lantern/">Lantern.</a></small>
+        </div>
+
+    </main>
+
+    $for(include-after)$ $include-after$ $endfor$
+
+    <script>
+        (function() {
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+                    links[i].target = '_blank';
+                }
+            }
+        })();
+    </script>
+
+    <!-- Minimal theme switcher -->
+    <script src="../js/minimal-theme-switcher.js"></script>
+   
+</body>
+
+</html>

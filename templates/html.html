@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc via Lantern" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/theme-switcher.css">
+    <link rel="stylesheet" href="css/html.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <title>$title$ | $publisher.name$</title>
+
+    $if(math)$ $math$ $endif$
+
+    <!-- Loads AnchorJS library: https://www.bryanbraun.com/anchorjs/ -->
+    <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+
+    <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+    $for(header-includes)$ $header-includes$ $endfor$
+</head>
+
+<body>
+    <div class="theme-switcher">
+        <ul>
+            <li><a href="#" data-theme-switcher="light">Light</a></li>
+            <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+        </ul>
+    </div>
+   
+    <h1 class="sr-only">$title$</h1>
+    $for(include-before)$ $include-before$ $endfor$
+    <main class="container">
+        <div class="grid">
+            <div class="toc">
+                <aside>
+                    <nav>
+                        <a href="index.html" class="back">
+                            Back to Home
+                        </a>
+                        <ul>${for(chapter_list)}                      
+                            <li><a href="${it.htmlfile}">${it.chapter_title}</a></li>${endfor}                         
+                        </ul>
+                        <a href="#top" class="back">
+                            Back to Top
+                        </a>
+                    </nav>
+                </aside>
+            </div>
+            <div class="content" id="#top">
+                <h2>$chapter_title$</h2>
+$body$ $if(definitions)$ ${ definitions.html() } $endif$
+            </div>
+        </div>
+    </main>
+    $for(include-after)$ $include-after$ $endfor$
+
+    <script>
+        /* pandoc creates two page titles; let's remove the first one */
+        page_titles = document.querySelectorAll('h2');
+        first = page_titles[0];
+        first.remove();
+
+    </script>
+
+    <script>
+        /* AnchorJS docs: https://www.bryanbraun.com/anchorjs/ */
+        anchors.add();
+    </script>
+
+    <script>
+        (function() {
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+                    links[i].target = '_blank';
+                }
+            }
+        })();
+    </script>
+
+    <!-- Minimal theme switcher -->
+    <script src="../js/minimal-theme-switcher.js"></script>
+
+</body>
+
+</html>

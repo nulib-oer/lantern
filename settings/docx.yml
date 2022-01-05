@@ -1,0 +1,33 @@
+# pandoc settings for html output format
+# for all available options, see 
+# https://pandoc.org/MANUAL.html#default-files
+
+metadata-file: 
+  - metadata.yml
+  - settings/config.yml
+  #- source/data/definitions.yml
+
+from: markdown
+to: docx
+
+reference-doc: templates/docx.docx
+standalone: true
+
+# table of contents
+table-of-contents: true
+toc-depth: 3
+
+# section numbers
+number-sections: false
+
+# citations
+citeproc: true
+bibliography:
+  - references.bib
+
+# code blocks
+highlight-style: pygments
+preserve-tabs: true
+
+# set to true if you want a preservation copy of the html output
+self-contained: true

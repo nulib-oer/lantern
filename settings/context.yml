@@ -1,0 +1,53 @@
+from: markdown
+# reader: may be used instead of from:
+to: context
+# writer: may be used instead of to:
+
+template: templates/lantern.context.tex
+standalone: true
+
+metadata-files:
+- metadata.yml
+- settings/config.yml
+
+citeproc: true
+bibliography:
+- references.bib
+
+# Filters will be assumed to be Lua filters if they have
+# the .lua extension, and json filters otherwise.  But
+# the filter type can also be specified explicitly, as shown.
+# Filters are run in the order specified.
+# To include the built-in citeproc filter, use either `citeproc`
+# or `{type: citeproc}`.
+filters:
+- lib/lua/questions.lua
+#- type: json
+#  path: foo.lua
+
+# citeproc, natbib, or biblatex. This only affects LaTeX
+# output.  If you want to use citeproc to format citations,
+# you should also set 'citeproc: true' (see above).
+cite-method: citeproc
+
+# part, chapter, section, or default:
+top-level-division: chapter
+abbreviations:
+
+table-of-contents: true
+toc-depth: 2
+number-sections: true
+# a list of offsets at each heading level
+number-offset: [0,0,0,0,0,0]
+
+#shift-heading-level-by: 1
+
+eol: lf
+strip-comments: false
+indented-code-classes: []
+ascii: true
+default-image-extension: ".jpg"
+
+reference-links: true
+# block, section, or document
+reference-location: section

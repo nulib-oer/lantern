@@ -1,0 +1,34 @@
+# publication settings
+
+lang: en 
+
+toc-title: "Contents" 
+reference-section-title: "References" 
+link-citations: true
+
+# LaTeX settings
+
+paper:
+  # available units: in, cm, or mm
+  # default creates A4 page size, > 150 pages long
+  width: 8.27in
+  height: 11.69in
+  gutter: 1in
+  margin:
+    top: 1in
+    bottom: 1in
+    left: 1in
+    right: 1in
+
+# ConTeXt settings
+
+papersize: a4 # a4, a5, letter
+fontsize: 12pt
+mainfont: DejaVu serif
+sansfont: DejaVu sans
+monofont: DejaVu sansmono
+mathfont: Latin Modern Math
+# available fonts: https://wiki.contextgarden.net/ConTeXt_distribution%27s_Fonts
+linkcolor: Sapphire 
+# available colors: https://wiki.contextgarden.net/Color#Crayola_crayon_colors
+linkstyle: bold # normal, bold, slanted, boldslanted, type, cap, small
