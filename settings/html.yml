@@ -5,7 +5,6 @@
 metadata-file: 
   - metadata.yml
   - settings/config.yml
-  #- source/data/definitions.yml
 
 from: markdown
 to: html5
@@ -26,9 +25,9 @@ filters:
   - lib/lua/siteurl.lua
 
 # citations
-citeproc: true
-bibliography:
-  - references.bib
+#citeproc: true
+#bibliography:
+#  - references.bib
 
 # math, see https://pandoc.org/MANUAL.html#math-rendering-in-html
 html-math-method:
