@@ -51,11 +51,11 @@
 .back {
     text-transform: uppercase;
     font-size: x-small;
-    color: yellow;
+    color: var(--contrast);
 }
 
 aside > nav > ul > li > a {
-    color: #fff;
+    color: var(--primary);
     text-transform: uppercase;
     font-size: small;
 }
@@ -77,13 +77,26 @@ aside > nav > ul > li > ul > li > a {
     }
 }
 
-/* box */
+/* References */
 
-.box {
-    margin: var(--block-spacing-vertical) 0;
-    padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    background: #3D2F5B;
-    box-shadow: var(--card-box-shadow);
+div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+    margin-bottom: 1em;
+}
+
+/* Questions */
+
+details {
+    background-color: var(--contrast);
+    padding: 1em;
+}
+
+details summary {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+details p {
+    color: var(--secondary);
 }
