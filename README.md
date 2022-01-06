@@ -6,7 +6,7 @@ Lantern is a [Pandoc](https://pandoc.org) template and toolkit for making [OER](
 
 ## Starting Manuscript Files
 
-Lantern provides [conversion scripts](https://github.com/nulib-oer/lantern/blob/main/lantern.sh#L20) for a subset of file formats that Pandoc is able to convert. 
+Lantern provides [conversion scripts](https://github.com/nulib-oer/lantern/blob/main/lantern.sh#L20) for a subset of file formats that Pandoc is able to convert. Lantern will convert these file formats to Markdown:
 
 | File Extensions | Format             | Related Applications                     |
 |-----------------|--------------------|------------------------------------------|
@@ -14,11 +14,10 @@ Lantern provides [conversion scripts](https://github.com/nulib-oer/lantern/blob/
 | `.odt`          | Open Document Text | Microsoft Word, Google Docs, LibreOffice |
 | `.tex`          | LaTeX              | Plain text editor (e.g. VS Code, Overleaf)     |
 
-: Lantern will convert these file formats to Markdown
 
 ## Final Publication Files
 
-Lantern provides [templates](https://github.com/nulib-oer/lantern/tree/main/templates) for producing multiple publication formats from Markdown.
+Lantern provides [templates](https://github.com/nulib-oer/lantern/tree/main/templates) for producing multiple publication formats from Markdown. Lantern can produce these publication formats from a single source:
 
 | File Extensions | Format             | Related Applications                          |
 |-----------------|--------------------|-----------------------------------------------|
@@ -27,8 +26,6 @@ Lantern provides [templates](https://github.com/nulib-oer/lantern/tree/main/temp
 | `.html`         | HTML5              | web browsers                                  |
 | `.epub`         | EPUB3              | Calibre, Adobe Digital Editions, web browsers |
 | `.pdf`          | PDF                | Adobe Acrobat Reader, web Browsers            |
-
-: Lantern can produce these publication formats from a single source.
 
 ## Examples
 
