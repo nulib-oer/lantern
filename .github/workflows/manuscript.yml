@@ -5,7 +5,7 @@ on:
     branches:
       - main  # Set a branch name to trigger deployment
     paths:
-      - 'preprocess/**'
+      - 'manuscript/**'
 
 jobs:
   convert_to_markdown:
@@ -19,7 +19,7 @@ jobs:
         run: brew install pandoc
 
       - name: Run Convert Script
-        run: bash lantern.sh preprocess
+        run: bash lantern.sh manuscript
 
       - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
         with:
