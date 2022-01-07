@@ -98,12 +98,14 @@ $if(url)$    <meta property="twitter:domain" content="$url$">$endif$
         </aside>
         -->
         <article>
-            $if(description)$
+            
             <header>
+                $if(description)$
                 <aside>
                     <h2>Description</h3>
-                    $description$
+                    <p>$description$</p>
                 </aside>
+                $endif$
 
                 <details open>
                     <summary>Read</summary>
@@ -115,7 +117,7 @@ $if(url)$    <meta property="twitter:domain" content="$url$">$endif$
                     $endif$
                 </details>
             </header>
-            $endif$
+            
             
             <hgroup>
                 <h2 id="toc">$toc-title$</h2>
