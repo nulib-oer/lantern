@@ -105,18 +105,20 @@ $if(url)$    <meta property="twitter:domain" content="$url$">$endif$
                     $description$
                 </aside>
 
-
-                $if(download)$
                 <details open>
-                    <summary>Download</summary>
-                    $for(download)$<a href="$it.link$" role="button" class="secondary">$it.label$</a>$endfor$
+                    <summary>Read</summary>
+                    <a href="#toc" role="button" class="contrast">Online</a>
+                    $if(download)$
+                    $for(download)$
+                    <a href="$it.link$" role="button" class="contrast">$it.label$</a>
+                    $endfor$
+                    $endif$
                 </details>
-                $endif$
             </header>
             $endif$
             
             <hgroup>
-                <h2>$toc-title$</h2>
+                <h2 id="toc">$toc-title$</h2>
             </hgroup>
 
             <aside>

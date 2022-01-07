@@ -6,6 +6,24 @@ toc-title: "Contents"
 reference-section-title: "References" 
 link-citations: true
 
+# download settings
+
+#download: # full-text outputs
+#  - label: PDF
+#    link: text.pdf
+#  - label: EPUB
+#    link: text.epub
+#  - label: DOCX
+#    link: text.docx
+#  - label: LaTeX
+#    link: text.tex
+#  - label: Markdown
+#    link: text.md
+#  - label: OAI-PMH
+#    link: text.xml
+#  - label: Source
+#    link: https://github.com/USERNAME/REPOSITORY-NAME
+
 # LaTeX settings
 
 paper:
