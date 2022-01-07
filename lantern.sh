@@ -4,11 +4,13 @@
 
 output_filename='text'
 output_directory='public'
+# space-separate list of formats you wish to generate
+output_formats='html' # 'html pdf epub docx markdown oai'
 siteurl=''
 
 # utilities
 
-pandoc_command='pandoc --quiet' # change to 'pandoc --verbose' for troubleshooting
+pandoc_command='pandoc --verbose' # change to 'pandoc --quiet' for fewer logging messages
 
 # setup
 
@@ -120,7 +122,7 @@ oai() {
         --to plain \
         --metadata-file metadata.yml \
         --template templates/oai.xml \
-        -o $output_directory/$output_filename.xml
+        -o $output_directory/oai.xml
     echo "🌐 The OAI-PMH record is now available in the $output_directory folder"
 }
 
@@ -301,20 +303,11 @@ start() {
     cp lib/starter-files/references.bib .
 }
 
-publication_formats() {
-    html
-    pdf
-    epub
-    docx
-    oai
-    markdown
-}
-
 # If no arguments are specified in the $ sh lantern.sh command,
 # then run the textbook function (which builds all formats)
 if [ -z "$1" ]
 then
-    publication_formats
+    $output_formats
 fi
 
 "$@"
