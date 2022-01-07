@@ -25,11 +25,11 @@ jobs:
       - name: TeX Dependencies
         run: |
           tlmgr --version
-          tlmgr install $(cat lib/latex-packages.txt)
+          bash lib/install-latex-packages.sh
 
       - name: Build Website
         run: |
-          bash lantern.sh html
+          bash lantern.sh
           touch ./public/.nojekyll
 
       - name: Deploy
