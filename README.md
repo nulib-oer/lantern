@@ -2,7 +2,11 @@
 
 ![Lantern Logo](https://user-images.githubusercontent.com/24395592/148448632-567a0dd5-af8b-483f-9713-dfada549cd01.png)
 
-Lantern is a [Pandoc](https://pandoc.org) template and toolkit for making [OER](https://en.wikipedia.org/wiki/Open_educational_resources) textbooks in multiple formats from markdown. All of the processing and hosting is handled automatically using GitHub Actions. Just edit your files and commit your changes to update your project. Read the [documentation](https://github.com/nulib-oer/lantern/wiki) to get started.
+Lantern is a [Pandoc](https://pandoc.org) template and toolkit for making [OER](https://en.wikipedia.org/wiki/Open_educational_resources) textbooks in multiple formats from markdown. All of the processing and hosting is handled automatically using GitHub Actions. Just edit your files and commit your changes to update your project. 
+
+- Read the [documentation](https://github.com/nulib-oer/lantern/wiki) to get started.
+- Post a question in the [discussion forum](https://github.com/nulib-oer/lantern/discussions)
+- Report a bug or feature request in the [issue tracker](https://github.com/nulib-oer/lantern/issues)
 
 ## Starting Manuscript Files
 
