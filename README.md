@@ -29,4 +29,5 @@ Lantern provides [templates](https://github.com/nulib-oer/lantern/tree/main/temp
 
 ## Examples
 
+- [Minimal Working Example](https://nulib-oer.github.io/lantern/)
 - [Introduction to Materials Science and Engineering](https://chrisdaaz.github.io/intro-to-mse/)
