@@ -301,20 +301,20 @@ start() {
     cp lib/starter-files/references.bib .
 }
 
-all_formats() {
-    markdown
+publication_formats() {
+    html
+    pdf
     epub
     docx
     oai
-    pdf_context # change to pdf_latex if using LaTeX
-    html
+    markdown
 }
 
 # If no arguments are specified in the $ sh lantern.sh command,
 # then run the textbook function (which builds all formats)
 if [ -z "$1" ]
 then
-    all_formats
+    publication_formats
 fi
 
 "$@"

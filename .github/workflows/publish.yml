@@ -5,7 +5,7 @@ on:
     branches:
       - main  # Set a branch name to trigger deployment
     paths-ignore:
-      - 'preprocess/**'
+      - 'manuscript/**'
       - 'README.md'
 
 jobs:
@@ -18,6 +18,14 @@ jobs:
 
       - name: Setup Pandoc
         run: brew install pandoc pandoc-crossref
+
+      - name: Setup TinyTeX
+        uses: r-lib/actions/setup-tinytex@v1
+
+      - name: TeX Dependencies
+        run: |
+          tlmgr --version
+          tlmgr install $(cat lib/latex-packages.txt)
 
       - name: Build Website
         run: |
