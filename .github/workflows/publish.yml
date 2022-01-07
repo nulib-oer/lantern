@@ -19,13 +19,13 @@ jobs:
       - name: Setup Pandoc
         run: brew install pandoc pandoc-crossref
 
-      - name: Setup TinyTeX
-        uses: r-lib/actions/setup-tinytex@v1
-
-      - name: TeX Dependencies
-        run: |
-          tlmgr --version
-          bash lib/install-latex-packages.sh
+#      - name: Setup TinyTeX
+#        uses: r-lib/actions/setup-tinytex@v1
+#
+#      - name: TeX Dependencies
+#        run: |
+#          tlmgr --version
+#          bash lib/install-latex-packages.sh
 
       - name: Build Website
         run: |
