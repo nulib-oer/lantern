@@ -4,9 +4,14 @@
 
 output_filename='text'
 output_directory='public'
-# space-separate list of formats you wish to generate
-output_formats='html' # 'html pdf epub docx markdown oai'
 siteurl=''
+
+output_formats() {
+    html
+    #pdf
+    #epub
+    #docx
+}
 
 # utilities
 
@@ -292,22 +297,11 @@ server() {
     python3 -m http.server --directory $output_directory;
 }
 
-start() {
-    # run this ONLY when starting a new project
-    rm -r _temp
-    rm -r $output_directory
-    rm -r text/*
-    rm metadata.yml
-    cp lib/starter-files/010-chapter-one.md text
-    cp lib/starter-files/metadata.yml .
-    cp lib/starter-files/references.bib .
-}
-
-# If no arguments are specified in the $ sh lantern.sh command,
-# then run the textbook function (which builds all formats)
+# If no arguments are specified in the $ bash lantern.sh command,
+# then run the output_formats function (which builds all formats)
 if [ -z "$1" ]
 then
-    $output_formats
+    output_formats
 fi
 
 "$@"
