@@ -100,3 +100,21 @@ details summary {
 details p {
     color: var(--secondary);
 }
+
+/* boxes */ 
+
+.box {
+    margin: var(--block-spacing-vertical) 0;
+    padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    background: var(--card-background-color);
+    box-shadow: var(--card-box-shadow);
+}
+
+/* definitions */
+
+dl > dt {
+    text-transform: uppercase;
+    font-weight: bold;
+}
