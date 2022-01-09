@@ -111,3 +111,10 @@ details p {
     background: var(--card-background-color);
     box-shadow: var(--card-box-shadow);
 }
+
+/* definitions */
+
+dl > dt {
+    text-transform: uppercase;
+    font-weight: bold;
+}

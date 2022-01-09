@@ -40,3 +40,13 @@ Ordered list:
 Write the solution here.
 
 :::
+
+#### Definitions
+
+item
+
+: item's definition
+
+another item
+
+: another item's definition.
