@@ -63,10 +63,10 @@
    --h4-color: #3a7098;
    --h5-color: #5986a6;
    --h6-color: #7f9aad;
-   --muted-color: #668499;
+   --muted-color: #4f5a65;
    --muted-border-color: #ebf0f4;
-   --primary: #0eaaaa;
-   --primary-hover: #078383;
+   --primary: #34385e;
+   --primary-hover: #7659b6;
    --primary-focus: rgba(14, 170, 170, 0.125);
    --primary-inverse: #fff;
    --secondary: #4e6d83;
@@ -120,8 +120,8 @@
    --code-value-color: #998866;
    --code-comment-color: #9ab1c1;
    --accordion-border-color: var(--muted-border-color);
-   --accordion-close-summary-color: var(--color);
-   --accordion-open-summary-color: var(--muted-color);
+   --accordion-close-summary-color: var(--background-color);
+   --accordion-open-summary-color: var(--background-color);
    --card-background-color: var(--background-color);
    --card-border-color: var(--muted-border-color);
    --card-box-shadow: 0 0.125rem 1rem rgba(23, 41, 54, 0.04),
@@ -153,7 +153,7 @@
      --h4-color: #89b3d1;
      --h5-color: #759cb8;
      --h6-color: #668499;
-     --muted-color: #668499;
+     --muted-color: #91a6ba;
      --muted-border-color: #1b2e3c;
      --primary: #0eaaaa;
      --primary-hover: #17cfcf;
@@ -243,7 +243,7 @@
    --h4-color: #89b3d1;
    --h5-color: #759cb8;
    --h6-color: #668499;
-   --muted-color: #668499;
+   --muted-color: #91a6ba;
    --muted-border-color: #1b2e3c;
    --primary: #0eaaaa;
    --primary-hover: #17cfcf;
