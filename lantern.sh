@@ -25,9 +25,9 @@ mkdir -p $output_directory
 # convert manuscript files to markdown
 
 manuscript() {
-    local docx_files=`ls -1 preprocess/*.docx 2>/dev/null | wc -l`
-    local odt_files=`ls -1 preprocess/*.odt 2>/dev/null | wc -l`
-    local latex_files=`ls -1 preprocess/*.tex 2>/dev/null | wc -l`
+    local docx_files=`ls -1 manuscript/*.docx 2>/dev/null | wc -l`
+    local odt_files=`ls -1 manuscript/*.odt 2>/dev/null | wc -l`
+    local latex_files=`ls -1 manuscript/*.tex 2>/dev/null | wc -l`
 
     if [ $docx_files != 0 ] ; then 
     for FILE in manuscript/*.docx
