@@ -29,7 +29,7 @@ jobs:
 
       - name: Build Website
         run: |
-          bash lantern.sh html
+          bash lantern.sh
           touch ./public/.nojekyll
 
       - name: Deploy
