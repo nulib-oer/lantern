@@ -24,13 +24,13 @@ mkdir -p $output_directory
 
 # convert manuscript files to markdown
 
-manuscript() {
-    local docx_files=`ls -1 manuscript/*.docx 2>/dev/null | wc -l`
-    local odt_files=`ls -1 manuscript/*.odt 2>/dev/null | wc -l`
-    local latex_files=`ls -1 manuscript/*.tex 2>/dev/null | wc -l`
+convert_to_markdown() {
+    local docx_files=`ls -1 original/*.docx 2>/dev/null | wc -l`
+    local odt_files=`ls -1 original/*.odt 2>/dev/null | wc -l`
+    local latex_files=`ls -1 original/*.tex 2>/dev/null | wc -l`
 
     if [ $docx_files != 0 ] ; then 
-    for FILE in manuscript/*.docx
+    for FILE in original/*.docx
         do 
             $pandoc_command "$FILE" \
                 --to markdown \
@@ -43,7 +43,7 @@ manuscript() {
     fi
 
     if [ $odt_files != 0 ] ; then 
-    for FILE in manuscript/*.odt
+    for FILE in original/*.odt
         do 
             $pandoc_command "$FILE" \
                 --to markdown \
@@ -56,7 +56,7 @@ manuscript() {
     fi
 
     if [ $latex_files != 0 ] ; then 
-    for FILE in manuscript/*.tex
+    for FILE in original/*.tex
         do 
             $pandoc_command "$FILE" \
                 --to markdown \
