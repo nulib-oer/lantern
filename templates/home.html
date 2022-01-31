@@ -8,12 +8,12 @@
 
     <title>$if(publisher)$$title$ | $publisher.name$$else$$title$$endif$</title>
 $for(author)$    <meta name="author" content="$if(author.name)$$author.name$$else$$author$$endif$" />$endfor$
-$if(date)$   <meta name="dcterms.date" content="$date$" />$endif$
+$if(publication-year)$   <meta name="dcterms.date" content="$publication-year$" />$endif$
 $if(keywords)$   <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />$endif$
 
     <!-- Bibliographic Metadata -->
     <meta name="citation_title" content="$title$">
-$if(date)$   <meta name="citation_year" content="$date$">$endif$
+$if(publication-year)$   <meta name="citation_year" content="$publication-year$">$endif$
     <meta name="citation_language" content="$lang$">
 $if(keyword)$$for(keyword)$     <meta name="citation_keywords" content="$keyword$">$endfor$$endif$
 $if(publisher)$     <meta name="citation_publisher" content="$publisher.name$">$endif$
@@ -46,7 +46,7 @@ $if(url)$    <meta property="twitter:domain" content="$url$">$endif$
             "name": "$title$",
             "author": "$for(author)$$if(author.name)$$author.name$$else$$author$$endif$$sep$, $endfor$",
             "url": "$url$",
-            "datePublished": "$date$"
+            "datePublished": "$publication-year$"
         }
     </script>
 
@@ -143,7 +143,7 @@ $if(url)$    <meta property="twitter:domain" content="$url$">$endif$
 
                         <dt>Copyright</dt>
                         <dd>$if(copyright.statement-uri)$
-                            <a href="$copyright.statement-uri$">$date$ &copy; 
+                            <a href="$copyright.statement-uri$">$publication-year$ &copy; 
                                 $if(copyright.holder)$
                                 $copyright.holder$
                                 $elseif(author.name)$
@@ -155,7 +155,7 @@ $if(url)$    <meta property="twitter:domain" content="$url$">$endif$
                                 $endif$
                             </a>
                             $else$
-                            $date$ &copy; 
+                            $publication-year$ &copy; 
                                 $if(copyright.holder)$$copyright.holder$$endif$
                                 $if(author.name)$
                                 $for(author)$
@@ -181,7 +181,7 @@ $if(url)$    <meta property="twitter:domain" content="$url$">$endif$
                         $if(copyright.attribution)$
                         <dt>Preferred Attribution</dt>
                         <dd>$if(copyright.attribution)$$copyright.attribution$$else$$for(author)$$author.name$$sep$, $endfor$, <em><a ref="$url$">$title$ $if(subtitle)$: $subtitle$$endif$.</a></em> $publisher.location$: <a href="$publisher-website$">$publisher.name$</a>,
-                            $date$.$endif$
+                            $publication-year$.$endif$
                         </dd>
                         $endif$
                     </dl>

@@ -183,13 +183,13 @@ $endfor$
 
 $description$
 \blank
-\copyright $date$ $if(copyright.holder)$$copyright.holder$$else$$for(author)$$author.name$$sep$, $endfor$$endif$. All rights reserved. $if(copyright.license)$
+\copyright $publication-year$ $if(copyright.holder)$$copyright.holder$$else$$for(author)$$author.name$$sep$, $endfor$$endif$. All rights reserved. $if(copyright.license)$
 Licensed under \goto{$copyright.license$}[url($copyright.license-uri$)]$endif$ $if(publisher)$Published by $publisher.name$$endif$
 \blank
 $if(copyright.attribution)$
 $copyright.attribution$
 $else$
-$for(author)$$author.name$$sep$, $endfor$. \it{$title$$if(subtitle)$: $subtitle$$endif$}. $if(publisher.location)$\tf{$publisher.location$: $endif$$publisher.name$, $date$.}
+$for(author)$$author.name$$sep$, $endfor$. \it{$title$$if(subtitle)$: $subtitle$$endif$}. $if(publisher.location)$\tf{$publisher.location$: $endif$$publisher.name$, $publication-year$.}
 $endif$
 
 \stopstandardmakeup
