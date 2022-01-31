@@ -7,7 +7,7 @@ $for(author)$
     <dc:creator>$author.name$</dc:creator>
 $endfor$
     <dc:publisher>$publisher.name$</dc:publisher>
-    <dc:date>Created: $publication-year$</dc:date>
+    <dc:date>Created: $date$</dc:date>
     <dc:type>text</dc:type>
     <dc:identifier>$doi$</dc:identifier>
     <dc:identifier>$isbn-p$</dc:identifier>
