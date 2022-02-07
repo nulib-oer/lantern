@@ -1,0 +1,92 @@
+/* body{
+    --bleed: 6mm;
+}
+*/
+@media print {
+
+    body{
+        font-size: 11px;
+        font-family: 'Source Serif 4', sans-serif;
+        counter-reset: chapterNumber;
+    }
+
+    h1, h2, h3, h4, h5, h6 { font-weight: 700; }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    h4 { font-size: 1.125rem; }
+
+    main > h2 { counter-increment: chapterNumber; }
+
+    main > h2::before { content: counter(chapterNumber) ". "; }
+
+    main > h2 {  string-set: title content(text) }
+
+    div.csl-entry {
+        margin-left:2em;
+        text-indent:-2em;
+        margin-bottom: 1em;
+    }
+
+    a {
+        color: #4f5a65;
+    }
+
+    pre, code { font-family: "Consolas, monospace" }
+
+    ul li {
+        list-style: none;
+    }
+    
+    ul li, ol li { margin-bottom: calc(1.5rem * 0.25); }
+
+    /* ALL PAGES ----------------------------------------------------------------------- */
+
+    @page {
+        size: A4;
+        margin: 1in;
+        @bottom-center {
+            content: counter(page);
+            text-align: center;
+        }
+        @top-center {
+            content: string(title)
+        }
+    }
+
+    /* BREAKS ----------------------------------------------------------------------- */
+
+
+    .title-page { break-after: page;}
+    .copyright-page { break-after: page; }
+    .table-of-contents { break-after: page; }
+
+    main > h2 { break-before: page; }
+
+
+
+    /* BLANK PAGES --------------------------------------------------------------------- */
+
+     @page :blank {
+        @bottom-left { content: none; }
+        @bottom-center { content: none; }
+        @bottom-right { content: none; }
+    }
+
+    /* NAMED PAGES --------------------------------------------------------------------- */
+
+    #title,
+    #copyright,
+    #toc { 
+        page: frontmatter; 
+    }
+
+    @page frontmatter {
+        @bottom-left { content: none; }
+        @bottom-center { content: none; }
+        @bottom-right { content: none; }
+    }
+
+}
