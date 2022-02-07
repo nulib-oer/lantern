@@ -1,3 +1,6 @@
+% DEPRECATED: earlier versions of Lantern supported ConTeXt, but no longer
+% leaving this here in case you prefer ConTeXt as your PDF engine
+
 $if(lang)$
 \mainlanguage[$lang$]
 $endif$
@@ -183,13 +186,13 @@ $endfor$
 
 $description$
 \blank
-\copyright $publication-year$ $if(copyright.holder)$$copyright.holder$$else$$for(author)$$author.name$$sep$, $endfor$$endif$. All rights reserved. $if(copyright.license)$
+\copyright $date$ $if(copyright.holder)$$copyright.holder$$else$$for(author)$$author.name$$sep$, $endfor$$endif$. All rights reserved. $if(copyright.license)$
 Licensed under \goto{$copyright.license$}[url($copyright.license-uri$)]$endif$ $if(publisher)$Published by $publisher.name$$endif$
 \blank
 $if(copyright.attribution)$
 $copyright.attribution$
 $else$
-$for(author)$$author.name$$sep$, $endfor$. \it{$title$$if(subtitle)$: $subtitle$$endif$}. $if(publisher.location)$\tf{$publisher.location$: $endif$$publisher.name$, $publication-year$.}
+$for(author)$$author.name$$sep$, $endfor$. \it{$title$$if(subtitle)$: $subtitle$$endif$}. $if(publisher.location)$\tf{$publisher.location$: $endif$$publisher.name$, $date$.}
 $endif$
 
 \stopstandardmakeup

@@ -1,3 +1,6 @@
+% DEPRECATED: earlier versions of Lantern supported LaTeX, but no longer
+% leaving this here in case you prefer LaTeX as your PDF engine
+
 \documentclass{book}
 
 \title{$title$}
@@ -159,7 +162,7 @@ $endif$
 
 \begin{flushleft}
 
-\textbf{Copyright \textcopyright{} $publication-year$  $copyright.holder$\\
+\textbf{Copyright \textcopyright{} $date$  $copyright.holder$\\
 License: \booklicense}\\[11pt] 
 
 $if(copyright.exceptions)$
@@ -185,7 +188,7 @@ For permissions beyond the scope of this license, visit $publisher.website$
 \begin{description}
   \item[Recommended Citation] \hfill \\ $copyright.attribution$
   \item[Publisher] \hfill \\ $publisher.name$, $publisher.location$
-  \item[Date] \hfill \\ $publication-year$
+  \item[Date] \hfill \\ $date$
   $if(website)$
   \item[Website] \hfill \\ $website$
   $endif$

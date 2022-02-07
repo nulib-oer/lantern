@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>$title$</title>
+    <link rel="stylesheet" href="lib/css/pdf.css">
+  </head>
+  <body>
+
+    <div id="title" class="title-page">
+
+      <h1>$title$</h1>
+      
+      $if(subtitle)$
+      <h2>$subtitle$</h2>
+      $endif$
+      
+      $if(author)$
+      <div class="authors">
+        <p>
+          $for(author)$$if(author.name)$$author.name$$else$$author$$endif$$sep$, $endfor$
+        </p>
+      </div>
+      $endif$
+
+      $if(publisher)$
+      <div class="publisher">
+        <a href="$publisher.website$">$publisher.name$</a>
+      </div>
+      $endif$
+      
+      $if(date)$
+      <div class="date">
+        $date$
+      </div>
+      $endif$
+    
+    </div>
+
+    $if(copyright)$
+    <div id="copyright" class="copyright-page">
+
+      <h2>$publisher.name$</h2>
+      <p>$publisher.location$, $publisher.website$</p>
+
+      <p>Copyright &copy; $date$ by The Authors.</p>
+
+      <a href="$copyright.license-uri$">
+          $copyright.license$
+      </a>
+
+      $if(copyright.attribution)$
+      <p>
+        $copyright.attribution$
+      </p>
+      $endif$
+
+      <p>DOI: $doi$</p>
+      <p>ISBN: $isbn-p$ Hardback</p>
+      <p>ISBN: $isbn-e$ Electronic</p>
+
+    </div>
+    $endif$
+
+    <div id="toc" class="table-of-contents">
+
+      $if(toc)$
+      <nav id="$idprefix$TOC" role="doc-toc">
+      $if(toc-title)$
+      <h2 id="$idprefix$toc-title">$toc-title$</h2>
+      $endif$
+      $table-of-contents$
+      </nav>
+      $endif$
+
+    </div>
+
+    <main>
+      $body$
+    </main>
+
+
+  </body>
+</html>

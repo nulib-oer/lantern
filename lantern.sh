@@ -15,7 +15,7 @@ output_formats() {
 
 # utilities
 
-pandoc_command='pandoc --verbose' # change to 'pandoc --quiet' for fewer logging messages
+pandoc_command='pandoc --quiet' # change to 'pandoc --verbose' for debugging
 
 # setup
 
@@ -71,35 +71,13 @@ convert_to_markdown() {
 
 # lantern output formats
 
-pdf_context() {
-    # combine all markdown files into one
-    $pandoc_command text/*.md -o _temp/chapters.md
-    # convert markdown to ConTeXt
-    $pandoc_command _temp/chapters.md \
-        --to context \
-        --defaults settings/context.yml \
-        --output $output_directory/$output_filename.tex
-    # convert ConTeXt to PDF    
-    $pandoc_command _temp/chapters.md \
-        --to context \
-        --defaults settings/context.yml \
-        --output $output_directory/$output_filename.pdf
-    echo "📖 The PDF edition is now available in the $output_directory folder"
-}
-
 pdf() {
     # combine all markdown files into one
     $pandoc_command text/*.md -o _temp/chapters.md
-    # convert markdown to LaTeX
+    # convert markdown to HTML to PDF
     $pandoc_command _temp/chapters.md \
-        --to latex \
-        --defaults settings/latex.yml \
-        --output $output_directory/$output_filename.tex
-    # convert LaTeX to PDF    
-    $pandoc_command _temp/chapters.md \
-        --to latex \
-        --defaults settings/latex.yml \
-        --output $output_directory/$output_filename.pdf
+        --defaults settings/pdf.yml \
+        --output  $output_directory/$output_filename.pdf
     echo "📖 The PDF edition is now available in the $output_directory folder"
 }
 

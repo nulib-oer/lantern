@@ -1,0 +1,49 @@
+# pandoc settings for html output format
+# for all available options, see 
+# https://pandoc.org/MANUAL.html#default-files
+
+metadata-file: 
+  - metadata.yml
+  - settings/config.yml
+  
+from: markdown
+to: html5
+
+template: templates/pdf.html
+
+shift-heading-level-by: 1
+
+resource-path: ["images"]
+standalone: true
+
+pdf-engine: pagedjs-cli
+#pdf-engine-opts:
+#  - '--page-size [size]' # Print to Page Size [size]
+#  - '--width [size]' # Print to Page Width [width]
+#  - '--height [size]' # Print to Page Height [weight]
+#  - '--page-margin [margin]' # Print with margin [margin]
+
+# table of contents
+table-of-contents: true
+toc-depth: 3
+
+# section numbers
+number-sections: false
+
+# citations
+citeproc: false
+bibliography:
+  - references.bib
+
+# math, see https://pandoc.org/MANUAL.html#math-rendering-in-html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+# code blocks
+highlight-style: pygments
+preserve-tabs: true
+
+# lua filters for adding new environments
+filters:
+  - lib/lua/questions.lua
