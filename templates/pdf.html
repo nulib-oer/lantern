@@ -15,8 +15,8 @@
       <h2>$subtitle$</h2>
       $endif$
       
+      $if(author)$
       <div class="authors">
-        $if(author)$
         <p>
           $for(author)$$if(author.name)$$author.name$$else$$author$$endif$$sep$, $endfor$
         </p>
@@ -37,6 +37,7 @@
     
     </div>
 
+    $if(copyright)$
     <div id="copyright" class="copyright-page">
 
       <h2>$publisher.name$</h2>
@@ -59,6 +60,7 @@
       <p>ISBN: $isbn-e$ Electronic</p>
 
     </div>
+    $endif$
 
     <div id="toc" class="table-of-contents">
 
