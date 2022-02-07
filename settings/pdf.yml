@@ -31,7 +31,7 @@ toc-depth: 3
 number-sections: false
 
 # citations
-citeproc: true
+citeproc: false
 bibliography:
   - references.bib
 
