@@ -24,7 +24,7 @@ mkdir -p $output_directory
 
 # convert manuscript files to markdown
 
-convert_to_markdown() {
+convert() {
     local docx_files=`ls -1 original/*.docx 2>/dev/null | wc -l`
     local odt_files=`ls -1 original/*.odt 2>/dev/null | wc -l`
     local latex_files=`ls -1 original/*.tex 2>/dev/null | wc -l`
