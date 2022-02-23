@@ -23,9 +23,9 @@ toc-depth: 3
 number-sections: false
 
 # citations
-citeproc: true
-bibliography:
-  - references.bib
+citeproc: false
+#bibliography:
+#  - references.bib
 
 # code blocks
 highlight-style: pygments
