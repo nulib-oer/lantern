@@ -1,6 +1,6 @@
 # Lantern
 
-![Lantern Logo](https://user-images.githubusercontent.com/24395592/155175321-3a2b3a47-e62e-464f-98aa-f3a4e824ce5d.png)
+![LanternLogo_Black](https://user-images.githubusercontent.com/24395592/160508807-1efcff5f-3e97-4a88-8e2b-cbc706ff1637.jpg)
 
 Lantern is a [Pandoc](https://pandoc.org) template and toolkit for making [OER](https://en.wikipedia.org/wiki/Open_educational_resources) in multiple formats. Lantern helps you typeset OER projects with Markdown (`.md`) from common word processing formats (`.docx`) so that you can generate HTML, PDF, and EPUB versions for the public. All of the source control, file processing, and web hosting is handled automatically with GitHub, but you are encouraged to use Lantern on your own computers. 
 
