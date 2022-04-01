@@ -5,7 +5,7 @@ on:
     branches:
       - main  # Set a branch name to trigger deployment
     paths-ignore:
-      - 'manuscript/**'
+      - 'original/**'
       - 'README.md'
 
 jobs:
