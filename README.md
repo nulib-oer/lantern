@@ -63,3 +63,7 @@ While this template is setup to use [GitHub Actions](https://github.com/features
 
 - [Pandoc-crossref](https://lierdakil.github.io/pandoc-crossref/): a pandoc filter for numbering figures, equations, tables, and cross-references to them.
 - A [LaTeX distribution](https://www.latex-project.org/get/#tex-distributions): for LaTeX/PDF typesetting and generation (we like [TinyTeX](https://yihui.org/tinytex/))
+
+## Related Publication
+
+Diaz, Chris. 2022. "[Lantern: A Pandoc Template for OER Publishing](https://journal.code4lib.org/articles/16329)," _Code4Lib Journal_ 53. Available: https://journal.code4lib.org/articles/16329
