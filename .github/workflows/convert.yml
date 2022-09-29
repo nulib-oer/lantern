@@ -14,6 +14,9 @@ jobs:
       
       - name: Checkout Repo
         uses: actions/checkout@v2
+      
+      - name: Enable Homebrew
+        uses: raviqqe/enable-homebrew@v0.1.0
         
       - name: Install Pandoc
         run: brew install pandoc
